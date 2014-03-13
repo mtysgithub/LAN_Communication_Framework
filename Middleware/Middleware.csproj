@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B6932E9D-C677-4F94-8FAB-6D89121F7BA9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Middleware</RootNamespace>
+    <AssemblyName>Middleware</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\Middleware\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>..\Bin\Middleware\Debug\Middleware.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\Middleware\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Bin\Middleware\Release\Middleware.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Middleware.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;E:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;E:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Middleware.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;E:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;E:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CJNet_SerializeTool">
+      <HintPath>..\3rdparty\CJNet_SerializeTool.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdparty\protobuf_net_r668\CoreOnly\ios\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Communication\CommonConfig.cs" />
+    <Compile Include="Communication\CommunicatePackage.cs" />
+    <Compile Include="Communication\EndPoint\MiddlewareEndPoing.cs" />
+    <Compile Include="Communication\EndPoint\Tcp\MiddlewareTcpEndPoint.cs" />
+    <Compile Include="Communication\GroupComunicatePackage.cs" />
+    <Compile Include="Communication\ICommunicatePackage.cs" />
+    <Compile Include="Communication\package\Internal\C2CRadioPackage.cs" />
+    <Compile Include="Communication\package\Internal\C2CReplyPackage.cs" />
+    <Compile Include="Communication\package\Internal\C2CRequestTransPackage.cs" />
+    <Compile Include="Communication\package\IParamPackage.cs" />
+    <Compile Include="Communication\package\ParamPackage.cs" />
+    <Compile Include="Communication\package\RadioPackage.cs" />
+    <Compile Include="Communication\package\ReplyPackage.cs" />
+    <Compile Include="Communication\package\RequestPackage.cs" />
+    <Compile Include="Communication\ReplyCommunicatePackage.cs" />
+    <Compile Include="Communication\RequestCommunicatePackage.cs" />
+    <Compile Include="Communication\Tcp\TcpCommunicatePackage.cs" />
+    <Compile Include="Communication\Tcp\TcpGroupCommunicatePackage.cs" />
+    <Compile Include="Device\BaseDevice.cs" />
+    <Compile Include="Device\ClientDevice.cs" />
+    <Compile Include="Device\GroupDevice.cs" />
+    <Compile Include="Device\IDevice.cs" />
+    <Compile Include="Device\MiddlewareDevice.cs" />
+    <Compile Include="Interface\Ex\IExMiddlewareDevice.cs" />
+    <Compile Include="Interface\ICCSerializeOperat.cs" />
+    <Compile Include="Interface\IMiddlewareMiddlewareTransferMessage.cs" />
+    <Compile Include="Interface\IServerCtrBasePackage.cs" />
+    <Compile Include="Interface\ServerProcotolOperator\IServerReplyInfoOperator.cs" />
+    <Compile Include="Interface\ServerProcotolOperator\IServerRequsetInfoOperator.cs" />
+    <Compile Include="Interface\ServerProcotolOperator\Reply\IServCtrReplyGet.cs" />
+    <Compile Include="Interface\ServerProcotolOperator\Request\IServCtrRequestSet.cs" />
+    <Compile Include="LayerProcessor\BindataLayer.cs" />
+    <Compile Include="LayerProcessor\CoreLogicLayer.cs" />
+    <Compile Include="LayerProcessor\DataViewLayer.cs" />
+    <Compile Include="LayerProcessor\GroupCommunicateLayer.cs" />
+    <Compile Include="LayerProcessor\MiddlewareCommunicateLayer.cs" />
+    <Compile Include="Middleware.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonoLib\MonoLib.csproj">
+      <Project>{61935DC7-8654-4AC7-9D6C-5B8A3B684C52}</Project>
+      <Name>MonoLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetClientCore\NetClientCore.csproj">
+      <Project>{B6D49F75-571C-EF3F-54B5-DD6CD1E610F2}</Project>
+      <Name>NetClientCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProtocolLibrary\ProtocolLibrary.csproj">
+      <Project>{7F7D3248-4432-4E7B-9CFD-25982668AD5B}</Project>
+      <Name>ProtocolLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

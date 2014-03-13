@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B6D49F75-571C-EF3F-54B5-DD6CD1E610F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetClientCore</RootNamespace>
+    <AssemblyName>NetClientCore</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\NetClientCore\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_1;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\NetClientCore\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="code\net\Collections\ThreadSafeSortedList.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Client\ClientReConnecter.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Client\IConnectableClient.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Client\IScsClient.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Client\ScsClientBase.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Client\ScsClientFactory.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Client\Tcp\ScsTcpClient.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Client\Tcp\TcpHelper.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Channels\CommunicationChannelBase.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Channels\CommunicationChannelEventArgs.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Channels\ConnectionListenerBase.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Channels\ICommunicationChannel.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Channels\IConnectionListener.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Channels\Tcp\TcpCommunicationChannel.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Channels\Tcp\TcpConnectionListener.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\CommunicationException.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\CommunicationStateException.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\CommunicationStates.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\EndPoints\ScsEndPoint.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\EndPoints\Tcp\ScsTcpEndPoint.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Messages\IScsMessage.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Messages\MessageEventArgs.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Messages\PingMessage.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Messages\ScsMessage.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Messages\ScsRawDataMessage.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Messages\ScsTextMessage.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Messengers\IMessenger.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Messengers\RequestReplyMessenger.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Protocols\BinarySerialization\BinarySerializationProtocol.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Protocols\BinarySerialization\BinarySerializationProtocolFactory.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Protocols\IScsWireProtocol.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Protocols\IScsWireProtocolFactory.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Communication\Protocols\WireProtocolManager.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Server\IScsServer.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Server\IScsServerClient.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Server\ScsServerBase.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Server\ScsServerClient.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Server\ScsServerFactory.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Server\ScsServerManager.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Server\ServerClientEventArgs.cs" />
+    <Compile Include="code\net\scs\Communication\scs\Server\Tcp\ScsTcpServer.cs" />
+    <Compile Include="code\net\scs\Threading\SequentialItemProcessor.cs" />
+    <Compile Include="code\net\scs\Threading\Timer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonoLib\MonoLib.csproj">
+      <Project>{61935DC7-8654-4AC7-9D6C-5B8A3B684C52}</Project>
+      <Name>MonoLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

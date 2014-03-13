@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Hik.Collections.ThreadSafeSortedList&lt;TK, TV&gt;" Collapsed="true">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAEAABgCAAABAQAAFAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Collections\ThreadSafeSortedList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Client.ClientReConnecter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACEEAEAAAAAAAAAEAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Client\ClientReConnecter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Client.ScsClientBase" Collapsed="true">
+    <Position X="10" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAIAQCABZCwQACAAAKQAAAAQAAIAAQEAAgAEQgA=</HashCode>
+      <FileName>Communication\Scs\Client\ScsClientBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Client.ScsClientFactory" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Client\ScsClientFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Client.Tcp.ScsTcpClient" Collapsed="true">
+    <Position X="10" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAQAAAA=</HashCode>
+      <FileName>Communication\Scs\Client\Tcp\ScsTcpClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Client.Tcp.TcpHelper" Collapsed="true">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Client\Tcp\TcpHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Channels.CommunicationChannelBase" Collapsed="true">
+    <Position X="7" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAQCAAIC4QACAAAAQAAAAgAAAAAAEAAgAAAgA=</HashCode>
+      <FileName>Communication\Scs\Communication\Channels\CommunicationChannelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Channels.CommunicationChannelEventArgs" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Channels\CommunicationChannelEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Channels.ConnectionListenerBase" Collapsed="true">
+    <Position X="10" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAACAACAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Channels\ConnectionListenerBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Channels.Tcp.TcpCommunicationChannel" Collapsed="true">
+    <Position X="7" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgAAABAgIAAAAAAAAAAAAgAAAAAAMAAABgAQA=</HashCode>
+      <FileName>Communication\Scs\Communication\Channels\Tcp\TcpCommunicationChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Channels.Tcp.TcpConnectionListener" Collapsed="true">
+    <Position X="10" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAQAAACAAAAACAAABAAAAAAAAIAAAIAAAAEAAAQA=</HashCode>
+      <FileName>Communication\Scs\Communication\Channels\Tcp\TcpConnectionListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.CommunicationException" Collapsed="true">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\CommunicationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.CommunicationStateException" Collapsed="true">
+    <Position X="4" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\CommunicationStateException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.EndPoints.ScsEndPoint" Collapsed="true">
+    <Position X="1" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\EndPoints\ScsEndPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.EndPoints.Tcp.ScsTcpEndPoint" Collapsed="true">
+    <Position X="1" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAACAAAAAAABAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Communication\Scs\Communication\EndPoints\Tcp\ScsTcpEndPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Messages.MessageEventArgs" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Messages\MessageEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Messages.ScsPingMessage" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Messages\PingMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Messages.ScsMessage" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAgAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Messages\ScsMessage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Messages.ScsRawDataMessage" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Messages\ScsRawDataMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Messages.ScsTextMessage" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Messages\ScsTextMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Messengers.RequestReplyMessenger&lt;T&gt;" Collapsed="true">
+    <Position X="7" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAABBgQDAAICYQACAAACQAAAAAAAIAIAAAAAAAAgg=</HashCode>
+      <FileName>Communication\Scs\Communication\Messengers\RequestReplyMessenger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Messengers.SynchronizedMessenger&lt;T&gt;" Collapsed="true">
+    <Position X="7" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAACAgAAAAAAAAAAAAACIAAAAAIAAAAAAAAwA=</HashCode>
+      <FileName>Communication\Scs\Communication\Messengers\SynchronizedMessenger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Protocols.BinarySerialization.BinarySerializationProtocol" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAACAAAABAABQQMAAIAAAAAACAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Protocols\BinarySerialization\BinarySerializationProtocol.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Protocols.BinarySerialization.BinarySerializationProtocolFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Protocols\BinarySerialization\BinarySerializationProtocolFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Communication.Protocols.WireProtocolManager" Collapsed="true">
+    <Position X="20" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Protocols\WireProtocolManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Server.ScsServerBase" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGEIBAAAAKAAQAAAAAAAAAAAJAAAIAAAACA=</HashCode>
+      <FileName>Communication\Scs\Server\ScsServerBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Server.ScsServerClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAIAQAAAICwQgCAAACQAAAAQAAAAAAEAAgAAAgA=</HashCode>
+      <FileName>Communication\Scs\Server\ScsServerClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hik.Communication.Scs.Server.ScsServerFactory" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Server\ScsServerFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Server.ScsServerManager" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Server\ScsServerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Server.ServerClientEventArgs" Collapsed="true">
+    <Position X="20" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Communication\Scs\Server\ServerClientEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.Scs.Server.Tcp.ScsTcpServer" Collapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Server\Tcp\ScsTcpServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Client.ScsServiceClient&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQABAIAEDEAQEgAAAgAAIAAAAAAAAIAAAAAAgAEAAA=</HashCode>
+      <FileName>Communication\ScsServices\Client\ScsServiceClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Client.ScsServiceClientBuilder" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Client\ScsServiceClientBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Communication.AutoConnectRemoteInvokeProxy&lt;TProxy, TMessenger&gt;" Collapsed="true">
+    <Position X="1" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Communication\AutoConnectRemoteInvokeProxy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Communication.RemoteInvokeProxy&lt;TProxy, TMessenger&gt;" Collapsed="true">
+    <Position X="1" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Communication\ScsServices\Communication\RemoteInvokeProxy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Communication.Messages.ScsRemoteException" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Communication\Messages\ScsRemoteException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Communication.Messages.ScsRemoteInvokeMessage" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAEAAAAAAAAAAAAAAAAAIACAAAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Communication\Messages\ScsRemoteInvokeMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Communication.Messages.ScsRemoteInvokeReturnMessage" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEEAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Communication\Messages\ScsRemoteInvokeReturnMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Service.ScsService" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Service\ScsService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Service.ScsServiceApplication" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAABCIAACAAAQAAAAAAAAKAJAAAIDAAAAQ=</HashCode>
+      <FileName>Communication\ScsServices\Service\ScsServiceApplication.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Service.ScsServiceAttribute" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Service\ScsServiceAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Service.ScsServiceBuilder" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Communication\ScsServices\Service\ScsServiceBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Service.ScsServiceClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAIAAAEgAAgAgAAAAAAAAAAAABAAAAEAAgAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Service\ScsServiceClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Service.ScsServiceClientFactory" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Service\ScsServiceClientFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Communication.ScsServices.Service.ServiceClientEventArgs" Collapsed="true">
+    <Position X="13" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Communication\ScsServices\Service\ServiceClientEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Threading.SequentialItemProcessor&lt;TItem&gt;" Collapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAAIIIAEIAAAAAABAAAAAAAIgAAAAAAAAA=</HashCode>
+      <FileName>Threading\SequentialItemProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hik.Threading.Timer" Collapsed="true">
+    <Position X="18.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAABAgIAAAAAAAAAAAAAAAAIAAACAAAAQM=</HashCode>
+      <FileName>Threading\Timer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Hik.Communication.Scs.Client.IConnectableClient" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAQAgAAAAAAIAAAAAAAAAAAAAAAgAEAAA=</HashCode>
+      <FileName>Communication\Scs\Client\IConnectableClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.Scs.Client.IScsClient" Collapsed="true">
+    <Position X="1.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Client\IScsClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.Scs.Communication.Channels.ICommunicationChannel" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAgAAAAAAAAAAAAAAAAAAAEAAgAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Channels\ICommunicationChannel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.Scs.Communication.Channels.IConnectionListener" Collapsed="true">
+    <Position X="13" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Channels\IConnectionListener.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.Scs.Communication.Messages.IScsMessage" Collapsed="true">
+    <Position X="14.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAgAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Messages\IScsMessage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.Scs.Communication.Messengers.IMessenger" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAIAQQACAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Messengers\IMessenger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.Scs.Communication.Protocols.IScsWireProtocol" Collapsed="true">
+    <Position X="13" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAABAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Protocols\IScsWireProtocol.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.Scs.Communication.Protocols.IScsWireProtocolFactory" Collapsed="true">
+    <Position X="14.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\Protocols\IScsWireProtocolFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.Scs.Server.IScsServer" Collapsed="true">
+    <Position X="16.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAACAAAAAAAAAAAAAAJAAAIAAAACA=</HashCode>
+      <FileName>Communication\Scs\Server\IScsServer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.Scs.Server.IScsServerClient" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAEAAgAAAAA=</HashCode>
+      <FileName>Communication\Scs\Server\IScsServerClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.ScsServices.Client.IScsServiceClient&lt;T&gt;" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Client\IScsServiceClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.ScsServices.Service.IScsServiceApplication" Collapsed="true">
+    <Position X="18.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAJAAAICAAAAQ=</HashCode>
+      <FileName>Communication\ScsServices\Service\IScsServiceApplication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Hik.Communication.ScsServices.Service.IScsServiceClient" Collapsed="true">
+    <Position X="20" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAEAAgAAAAA=</HashCode>
+      <FileName>Communication\ScsServices\Service\IScsServiceClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Hik.Communication.Scs.Communication.CommunicationStates" Collapsed="true">
+    <Position X="13" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Communication\Scs\Communication\CommunicationStates.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>
