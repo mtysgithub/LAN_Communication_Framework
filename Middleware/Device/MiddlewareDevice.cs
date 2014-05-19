@@ -26,6 +26,7 @@ using Middleware.Interface.ServerProcotolOperator.Request;
 using Middleware.Interface.ServerProcotolOperator.Reply;
 using Middleware.LayerProcessor;
 using Middleware.Communication.EndPoint.Tcp;
+using Middleware.Communication.Excetion;
 
 namespace Middleware.Device
 {

@@ -14,6 +14,8 @@ using Middleware.Communication.EndPoint.Tcp;
 
 namespace Middleware.Interface.Ex
 {
+    
+
     public interface IExMiddlewareDevice
     {
         /// <summary>

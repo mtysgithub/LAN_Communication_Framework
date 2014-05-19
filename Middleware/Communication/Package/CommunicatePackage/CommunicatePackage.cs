@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Middleware.Communication.Package;
+
+using Middleware.Communication;
 using Middleware.Device;
+using Middleware.Communication.Package;
 
 namespace Middleware.Communication
 {
@@ -51,7 +53,7 @@ namespace Middleware.Communication
             get { return _msgid.ToString(); }
         }
         //应答报文 - 异步方式
-        public CommunicationConfig.AsynReponseHandler AsynchronousReponseCame = null;
+        public AsynReponseHandler AsynchronousReponseCame = null;
 
         private ParamPackage _paramPackage = null;
         private string _communicationName = string.Empty;

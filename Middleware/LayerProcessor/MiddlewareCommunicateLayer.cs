@@ -29,6 +29,7 @@ using Middleware.Device;
 using Middleware.Interface.ServerProcotolOperator;
 using Middleware.Interface.ServerProcotolOperator.Request;
 using Middleware.Interface.ServerProcotolOperator.Reply;
+using Middleware.Communication.Excetion;
 
 namespace Middleware.LayerProcessor
 {

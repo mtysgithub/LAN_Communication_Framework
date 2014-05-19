@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Xml;
 
 using Middleware;
 using Middleware.Device;
@@ -13,12 +15,11 @@ using Middleware.Communication;
 using Middleware.Communication.CommunicationConfig;
 using Middleware.Communication.Package;
 using Middleware.Communication.Tcp;
+using Middleware.Communication.EndPoint.Tcp;
+using Middleware.Communication.Package.CommunicatePackage;
 
 using Hik.Communication.Scs.Communication.EndPoints.Tcp;
 using Hik.Communication.Scs.Communication.Messages;
-using System.Threading.Tasks;
-using System.Xml;
-using Middleware.Communication.EndPoint.Tcp;
 
 namespace Client
 {
@@ -467,7 +468,7 @@ namespace Client
             //}
         }
 
-        private void CallBack_Received(CommunicatePackage sender, AsynResponseEventArg evtAr)
+        private void CallBack_Received(CommunicatePackage sender, AsynReplyCommunicatePackage evtAr)
         {
             byte[][] receivedDetails = new byte[evtAr.RemotDeviceReplyPackage.ParamDefalutValues.Values.Count][];
             evtAr.RemotDeviceReplyPackage.ParamDefalutValues.Values.CopyTo(receivedDetails, 0);
