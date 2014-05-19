@@ -31,23 +31,21 @@ namespace NIPlayRoomNetServer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Server));
             this.app_notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.LogWIndow = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // app_notify
             // 
-            this.app_notify.Icon = ((System.Drawing.Icon)(resources.GetObject("app_notify.Icon")));
             this.app_notify.Text = "触角跨进程消息服务";
             this.app_notify.Visible = true;
             this.app_notify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.app_notify_MouseDoubleClick);
             // 
             // LogWIndow
             // 
-            this.LogWIndow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogWIndow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LogWIndow.Location = new System.Drawing.Point(13, 13);
             this.LogWIndow.Multiline = true;
             this.LogWIndow.Name = "LogWIndow";
@@ -63,7 +61,6 @@ namespace NIPlayRoomNetServer
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(479, 400);
             this.Controls.Add(this.LogWIndow);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Server";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
