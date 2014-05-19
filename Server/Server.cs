@@ -21,11 +21,11 @@ using ProtocolLibrary.CSProtocol.CommonConfig;
 using ProtocolLibrary.CSProtocol.CommonConfig.ClientMsgCodecSpace;
 using ProtocolLibrary.JsonSerializtion;
 
-using NIPlayRoomNetServer.Interface;
-using NIPlayRoomNetServer.ServerClient;
+using Mty.LCF.Server.Interface;
+using Mty.LCF.Server.ServerClient;
 using System.IO;
 
-namespace NIPlayRoomNetServer
+namespace Mty.LCF.Server
 {
     public enum AppErrorInfo
     {

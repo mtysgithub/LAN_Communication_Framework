@@ -16,7 +16,7 @@ using ProtocolLibrary.CSProtocol;
 using ProtocolLibrary.CSProtocol.CommonConfig.ClientMsgCodecSpace;
 using ProtocolLibrary.JsonSerializtion;
 
-namespace NIPlayRoomNetServer.ServerClient
+namespace Mty.LCF.Server.ServerClient
 {
     public class BaseServerClient
     {

@@ -8,7 +8,7 @@ using Hik.Communication.Scs.Communication.Messages;
 using ProtocolLibrary.CSProtocol.CommonConfig;
 using System.Collections;
 
-namespace NIPlayRoomNetServer.ServerClient
+namespace Mty.LCF.Server.ServerClient
 {
     class EditorClient : BaseServerClient
     {

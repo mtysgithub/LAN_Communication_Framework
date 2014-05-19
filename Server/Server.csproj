@@ -8,8 +8,8 @@
     <ProjectGuid>{8A09A884-B51F-43AC-BABA-688409DEF2FF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NIPlayRoomNetServer</RootNamespace>
-    <AssemblyName>NIPlayRoomNetServer</AssemblyName>
+    <RootNamespace>LCF.Server</RootNamespace>
+    <AssemblyName>LAN_Communication_Framework_Server</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -84,7 +84,7 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>NIPlayRoomNetServer.Program</StartupObject>
+    <StartupObject>Mty.LCF.Server.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>

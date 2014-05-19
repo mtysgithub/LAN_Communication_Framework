@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using NIPlayRoomNetServer;
-using NIPlayRoomNetServer.ServerClient;
+using Mty.LCF.Server;
+using Mty.LCF.Server.ServerClient;
 
-namespace NIPlayRoomNetServer.Interface
+namespace Mty.LCF.Server.Interface
 {
     interface IGroupMannager
     {

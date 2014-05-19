@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-using NIPlayRoomNetServer.ServerClient;
+using Mty.LCF.Server.ServerClient;
 using ProtocolLibrary.CSProtocol.CommonConfig.ClientMsgCodecSpace;
 using ProtocolLibrary.CSProtocol;
 
-namespace NIPlayRoomNetServer
+namespace Mty.LCF.Server
 {
     public class Group
     {

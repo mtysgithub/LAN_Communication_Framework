@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-namespace NIPlayRoomNetServer
+namespace Mty.LCF.Server
 {
     partial class Server
     {
@@ -31,13 +31,15 @@ namespace NIPlayRoomNetServer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Server));
             this.app_notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.LogWIndow = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // app_notify
             // 
-            this.app_notify.Text = "触角跨进程消息服务";
+            this.app_notify.Icon = ((System.Drawing.Icon)(resources.GetObject("app_notify.Icon")));
+            this.app_notify.Text = "跨进程消息服务";
             this.app_notify.Visible = true;
             this.app_notify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.app_notify_MouseDoubleClick);
             // 
@@ -123,9 +125,9 @@ namespace NIPlayRoomNetServer
             //默认隐藏到系统托盘
             this.Hide();
 
-            string strFormTitle = "触角跨进程消息服务-控制台" + " " + "v" + this.ProductVersion;
+            string strFormTitle = "跨进程消息服务-控制台" + " " + "v" + this.ProductVersion;
             this.Text = strFormTitle;
-            this.app_notify.Text = "触角跨进程消息服务" + " " + "v" + this.ProductVersion;
+            this.app_notify.Text = "跨进程消息服务" + " " + "v" + this.ProductVersion;
         }
         #endregion
 
