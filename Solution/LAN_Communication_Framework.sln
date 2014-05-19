@@ -1,8 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIPlayRoomNetServer", "NIPlayRoomNetServer\NIPlayRoomNetServer.csproj", "{8A09A884-B51F-43AC-BABA-688409DEF2FF}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middleware", "..\Middleware\Middleware.csproj", "{B6932E9D-C677-4F94-8FAB-6D89121F7BA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoLib", "..\MonoLib\MonoLib.csproj", "{61935DC7-8654-4AC7-9D6C-5B8A3B684C52}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFrameworkSerializeToolGenerator", "..\NetFrameworkSerializeToolGenerator\NetFrameworkSerializeToolGenerator.csproj", "{779C5166-75D6-4521-85E2-3577D8C1D1B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolLibrary", "..\ProtocolLibrary\ProtocolLibrary.csproj", "{7F7D3248-4432-4E7B-9CFD-25982668AD5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "..\Server\Server.csproj", "{8A09A884-B51F-43AC-BABA-688409DEF2FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,20 +27,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|x64.ActiveCfg = Debug|x64
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|x64.Build.0 = Debug|x64
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|x86.ActiveCfg = Debug|x86
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|x86.Build.0 = Debug|x86
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|Any CPU.ActiveCfg = Release|x86
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|Mixed Platforms.Build.0 = Release|x86
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|x64.ActiveCfg = Release|x64
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|x64.Build.0 = Release|x64
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|x86.ActiveCfg = Release|x86
-		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|x86.Build.0 = Release|x86
 		{B6932E9D-C677-4F94-8FAB-6D89121F7BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6932E9D-C677-4F94-8FAB-6D89121F7BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6932E9D-C677-4F94-8FAB-6D89121F7BA9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -115,6 +101,20 @@ Global
 		{7F7D3248-4432-4E7B-9CFD-25982668AD5B}.Release|x64.ActiveCfg = Release|x64
 		{7F7D3248-4432-4E7B-9CFD-25982668AD5B}.Release|x64.Build.0 = Release|x64
 		{7F7D3248-4432-4E7B-9CFD-25982668AD5B}.Release|x86.ActiveCfg = Release|x64
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|x64.ActiveCfg = Debug|x64
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|x64.Build.0 = Debug|x64
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|x86.ActiveCfg = Debug|x86
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Debug|x86.Build.0 = Debug|x86
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|Any CPU.ActiveCfg = Release|x86
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|Mixed Platforms.Build.0 = Release|x86
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|x64.ActiveCfg = Release|x64
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|x64.Build.0 = Release|x64
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|x86.ActiveCfg = Release|x86
+		{8A09A884-B51F-43AC-BABA-688409DEF2FF}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

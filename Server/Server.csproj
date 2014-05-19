@@ -144,11 +144,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NetClientCore\NetClientCore.csproj">
+    <ProjectReference Include="..\NetClientCore\NetClientCore.csproj">
       <Project>{B6D49F75-571C-EF3F-54B5-DD6CD1E610F2}</Project>
       <Name>NetClientCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ProtocolLibrary\ProtocolLibrary.csproj">
+    <ProjectReference Include="..\ProtocolLibrary\ProtocolLibrary.csproj">
       <Project>{7F7D3248-4432-4E7B-9CFD-25982668AD5B}</Project>
       <Name>ProtocolLibrary</Name>
     </ProjectReference>
