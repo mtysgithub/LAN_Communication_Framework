@@ -11,6 +11,7 @@ using Middleware.Device;
 using Middleware.Communication.Package;
 using Middleware.Communication.Tcp;
 using Middleware.Communication.EndPoint.Tcp;
+using Middleware.Communication.Message;
 
 namespace Middleware.Interface.Ex
 {
@@ -164,6 +165,24 @@ namespace Middleware.Interface.Ex
 		/// 收到一个远程广播通知
 		/// </summary>
 		event RemotRadioRecivedHandler RemotRadioRecived;
+
+        /// <summary>
+        /// 监听一种设备消息
+        /// </summary>
+        /// <param name="messenger">目标设备</param>
+        /// <param name="evt">消息类</param>
+        void Listen(ClientDevice messenger, AbstractMessageType evt);
+
+        /// <summary>
+        /// 注册本设备支持的消息
+        /// </summary>
+        /// <param name="evt"></param>
+        void RegistEvent(AbstractMessageType evt);
+
+        /// <summary>
+        /// 事件接收回掉
+        /// </summary>
+        event MessageRecivedHandler MessageRecived;
 
         /// <summary>
         /// 设备会话Token

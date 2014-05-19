@@ -8,7 +8,7 @@ using ProtocolLibrary.CSProtocol.CommonConfig.ClientMsgCodecSpace;
 using Middleware.Device;
 using Middleware.Communication.Package;
 using Middleware.Communication.Package.Internal;
-using Middleware.Communication.Event;
+using Middleware.Communication.Message;
 using Middleware.Communication.Excetion;
 using Middleware.Communication.Package.CommunicatePackage;
 

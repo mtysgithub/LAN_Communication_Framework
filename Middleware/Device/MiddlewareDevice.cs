@@ -27,6 +27,7 @@ using Middleware.Interface.ServerProcotolOperator.Reply;
 using Middleware.LayerProcessor;
 using Middleware.Communication.EndPoint.Tcp;
 using Middleware.Communication.Excetion;
+using Middleware.Communication.Message;
 
 namespace Middleware.Device
 {
@@ -353,6 +354,24 @@ namespace Middleware.Device
         {
             get { return base.SelfDevice.Detail; }
         }
+
+        /// <summary>
+        /// 监听一种设备消息
+        /// </summary>
+        /// <param name="messenger">目标设备</param>
+        /// <param name="evt">消息类</param>
+        public void Listen(ClientDevice messenger, AbstractMessageType evt) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// 注册本设备支持的消息
+        /// </summary>
+        /// <param name="evt"></param>
+        public void RegistEvent(AbstractMessageType evt) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// 事件接收回掉
+        /// </summary>
+        public event MessageRecivedHandler MessageRecived = null;
 
         #endregion
 

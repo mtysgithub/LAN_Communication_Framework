@@ -31,7 +31,7 @@ using Middleware.Interface.ServerProcotolOperator.Reply;
 using Middleware.LayerProcessor;
 using Middleware.Communication.EndPoint.Tcp;
 using Middleware.Communication.Excetion;
-using Middleware.Communication.Event;
+using Middleware.Communication.Message;
 using Middleware.Communication.Package.CommunicatePackage;
 
 namespace Middleware.LayerProcessor
