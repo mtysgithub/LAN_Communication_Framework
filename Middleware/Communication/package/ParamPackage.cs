@@ -46,8 +46,8 @@ namespace Middleware.Communication.Package
         protected enum SerializObjectType
         {
             ParamPackage,
-            RadioPackage,
-            C2CRadioPackage
+            //RadioPackage,
+            //C2CRadioPackage
         }
         /// <summary>
         /// 对主调实例做序列化
