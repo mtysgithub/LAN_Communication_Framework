@@ -57,7 +57,6 @@ namespace Middleware.LayerProcessor
 
         public void Release()
         {
-            mMsgTyp2Dispatcher.Dispose();
             mMsgTyp2Dispatcher = null;
             mMessageFactory = null;
             this.MessageRecived = null;
