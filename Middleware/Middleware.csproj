@@ -81,8 +81,8 @@
     <Compile Include="Communication\CommonConfig.cs" />
     <Compile Include="Communication\Delegate.cs" />
     <Compile Include="Communication\Excetions.cs" />
-    <Compile Include="Communication\Message\AbstractMessage.cs" />
-    <Compile Include="Communication\Message\AbstractMessageType.cs" />
+    <Compile Include="Communication\Message\BaseMessage.cs" />
+    <Compile Include="Communication\Message\BaseMessageType.cs" />
     <Compile Include="Communication\Message\Interface\IMessageFactory.cs" />
     <Compile Include="Communication\Message\MessageFactory.cs" />
     <Compile Include="Communication\Package\CommunicatePackage\AsynReplyCommunicatePackage.cs" />
