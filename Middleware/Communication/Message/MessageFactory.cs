@@ -32,7 +32,7 @@ namespace Middleware.Communication.Message
 
         protected MessageFactory() { }
 
-        public void RegistMessage(AbstractMessageType typMsg, Type t_Msg)
+        public void RegistMessage(BaseMessageType typMsg, Type t_Msg)
         {
             if ((null != typMsg) && (!mTypTable.ContainsKey(typMsg.Id)))
             {
@@ -43,11 +43,11 @@ namespace Middleware.Communication.Message
             }
         }
 
-        public AbstractMessage CreateMessage(AbstractMessageType typMsg)
+        public BaseMessage CreateMessage(BaseMessageType typMsg)
         {
             if ((null != typMsg) && (mTypTable.ContainsKey(typMsg.Id)))
             {
-                AbstractMessage msg = Activator.CreateInstance(mTypTable[typMsg.Id] as Type) as AbstractMessage;
+                BaseMessage msg = Activator.CreateInstance(mTypTable[typMsg.Id] as Type) as BaseMessage;
                 msg.Type = typMsg;
                 return msg;
             }

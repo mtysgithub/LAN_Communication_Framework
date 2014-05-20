@@ -142,7 +142,8 @@ namespace ProtocolLibrary.CCProtocol
             }
         }
 
-        [ProtoContract]
+        [ProtoContract,
+        ProtoInclude(8, typeof(Seria_C2CMessageRadioPackage))]
         public class Seria_C2CRadioPackage : Seria_RadioPackage
         {
             public Seria_C2CRadioPackage() : base() { }
@@ -163,6 +164,23 @@ namespace ProtocolLibrary.CCProtocol
             {
                 get;
                 set;
+            }
+        }
+
+        [ProtoContract]
+        public class Seria_C2CMessageRadioPackage : Seria_C2CRadioPackage
+        {
+            public Seria_C2CMessageRadioPackage() : base() { }
+
+            public Seria_C2CMessageRadioPackage(Seria_C2CMessageRadioPackage obj)
+                : base(obj as Seria_C2CRadioPackage)
+            {
+                //TODO.
+            }
+
+            public Seria_C2CMessageRadioPackage(Seria_C2CRadioPackage paret)
+                : base(paret) 
+            {
             }
         }
 

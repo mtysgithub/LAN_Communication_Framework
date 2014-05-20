@@ -6,17 +6,17 @@ using Middleware.Communication.Package;
 
 namespace Middleware.Communication.Message
 {
-    public abstract class AbstractMessage : ParamPackage
+    public abstract class BaseMessage : ParamPackage
     {
-        private AbstractMessageType mMessageType = null;
+        private BaseMessageType mMessageType = null;
 
-        public AbstractMessageType Type
+        public BaseMessageType Type
         {
             get { return mMessageType; }
             internal set { mMessageType = value; }
         }
 
-        public AbstractMessage(AbstractMessageType t_msg)
+        public BaseMessage(BaseMessageType t_msg)
         {
             mMessageType = t_msg;
         }

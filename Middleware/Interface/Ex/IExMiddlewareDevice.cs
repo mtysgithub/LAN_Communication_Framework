@@ -171,26 +171,26 @@ namespace Middleware.Interface.Ex
         /// </summary>
         /// <param name="messenger">目标设备</param>
         /// <param name="typMsg">消息定义</param>
-        void Listen(ClientDevice messenger, AbstractMessageType typMsg);
+        void Listen(ClientDevice messenger, BaseMessageType typMsg);
 
         /// <summary>
         /// 注册本设备支持的消息
         /// </summary>
         /// <param name="typMsg">消息定义</param>
-        void RegistMessage(AbstractMessageType typMsg, Type t_Msg);
+        void RegistMessage(BaseMessageType typMsg, Type t_Msg);
 
         /// <summary>
         /// 创建一条消息
         /// </summary>
         /// <param name="typMsg">消息定义</param>
         /// <returns></returns>
-        AbstractMessage CreateMessage(AbstractMessageType typMsg);
+        BaseMessage CreateMessage(BaseMessageType typMsg);
 
         /// <summary>
         /// 发送一条消息
         /// </summary>
         /// <param name="msg">消息包</param>
-        void SendMessage(AbstractMessage msg);
+        void SendMessage(BaseMessage msg);
 
         /// <summary>
         /// 事件接收回调

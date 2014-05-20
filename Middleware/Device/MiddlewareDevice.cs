@@ -364,7 +364,7 @@ namespace Middleware.Device
         /// </summary>
         /// <param name="messenger">目标设备</param>
         /// <param name="typMsg">消息定义</param>
-        public void Listen(ClientDevice messenger, AbstractMessageType typMsg) 
+        public void Listen(ClientDevice messenger, BaseMessageType typMsg) 
         {
             base.CoListen(messenger, typMsg);
         }
@@ -373,7 +373,7 @@ namespace Middleware.Device
         /// 注册本设备支持的消息
         /// </summary>
         /// <param name="typMsg">消息定义</param>
-        public void RegistMessage(AbstractMessageType typMsg, Type t_Msg) 
+        public void RegistMessage(BaseMessageType typMsg, Type t_Msg) 
         {
             base.CoRegistMessage(typMsg, t_Msg);
         }
@@ -383,7 +383,7 @@ namespace Middleware.Device
         /// </summary>
         /// <param name="typMsg">消息定义</param>
         /// <returns></returns>
-        public AbstractMessage CreateMessage(AbstractMessageType typMsg) 
+        public BaseMessage CreateMessage(BaseMessageType typMsg) 
         {
             return base.CoCreateMessage(typMsg);
         }
@@ -392,7 +392,7 @@ namespace Middleware.Device
         /// 发送一条消息
         /// </summary>
         /// <param name="msg">消息包</param>
-        public void SendMessage(AbstractMessage msg) 
+        public void SendMessage(BaseMessage msg) 
         {
             base.CoSendMessage(msg);
         }
@@ -428,7 +428,7 @@ namespace Middleware.Device
             }
         }
 
-        private void __OutsideMessageRecived(ClientDevice sender, AbstractMessage msg)
+        private void __OutsideMessageRecived(ClientDevice sender, BaseMessage msg)
         {
             if(null != this.MessageRecived)
             {

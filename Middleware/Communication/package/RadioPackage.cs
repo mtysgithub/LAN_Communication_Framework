@@ -38,7 +38,8 @@ namespace Middleware.Communication.Package
         protected enum SerializObjectType
         {
             RadioPackage,
-            C2CRadioPackage
+            C2CRadioPackage,
+            C2CMessageRadioPackage
         }
         public override byte[] SerializeMiddlewareMessage()
         {
@@ -119,6 +120,10 @@ namespace Middleware.Communication.Package
                         {
                             throw new Exception("针对Bin数据尝试反序列失败，请检验数据格式: " + ex.ToString());
                         }
+                    }
+                case (byte)SerializObjectType.C2CMessageRadioPackage:
+                    {
+                        throw new NotImplementedException();
                     }
                 default:
                     {

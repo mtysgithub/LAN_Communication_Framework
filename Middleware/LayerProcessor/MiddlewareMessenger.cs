@@ -65,12 +65,12 @@ namespace Middleware.LayerProcessor
             mGroupCommunicateProcessor = null;
         }
 
-        public void Listen(ClientDevice messenger, AbstractMessageType typMsg)
+        public void Listen(ClientDevice messenger, BaseMessageType typMsg)
         {
             throw new Exception("The method or operation is not implemented.");
         }
 
-        public void RegistMessage(AbstractMessageType typMsg, Type t_Msg)
+        public void RegistMessage(BaseMessageType typMsg, Type t_Msg)
         {
             mMessageFactory.RegistMessage(typMsg, t_Msg);
             GroupDevice group = null;
@@ -85,12 +85,12 @@ namespace Middleware.LayerProcessor
             }
         }
 
-        public AbstractMessage CreateMessage(AbstractMessageType typMsg)
+        public BaseMessage CreateMessage(BaseMessageType typMsg)
         {
             return mMessageFactory.CreateMessage(typMsg);
         }
 
-        public void SendMessage(AbstractMessage msg)
+        public void SendMessage(BaseMessage msg)
         {
             if (mMsgTyp2Dispatcher.ContainsKey(msg.Type))
             {

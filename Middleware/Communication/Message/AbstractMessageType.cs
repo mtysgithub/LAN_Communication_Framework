@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Middleware.Communication.Message
 {
-    public abstract class AbstractMessageType
+    public abstract class BaseMessageType
     {
         protected string mName;
         protected uint mId;
@@ -20,7 +20,7 @@ namespace Middleware.Communication.Message
             get { return mId; }
         }
 
-        public AbstractMessageType(string name, uint id)
+        public BaseMessageType(string name, uint id)
         {
             mName = name;
             mId = id;

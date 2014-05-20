@@ -7,7 +7,7 @@ namespace Middleware.Communication.Message.Interface
 {
     interface IMessageFactory
     {
-        void RegistMessage(AbstractMessageType typMsg, Type t_Msg);
-        AbstractMessage CreateMessage(AbstractMessageType typMsg);
+        void RegistMessage(BaseMessageType typMsg, Type t_Msg);
+        BaseMessage CreateMessage(BaseMessageType typMsg);
     }
 }

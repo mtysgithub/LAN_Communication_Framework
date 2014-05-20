@@ -43,7 +43,7 @@ namespace Middleware.Communication
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="msg"></param>
-    public delegate void MessageRecivedHandler(ClientDevice sender, AbstractMessage msg);
+    public delegate void MessageRecivedHandler(ClientDevice sender, BaseMessage msg);
 
     ///// <summary>
     ///// Radio操作触发的错误事件
