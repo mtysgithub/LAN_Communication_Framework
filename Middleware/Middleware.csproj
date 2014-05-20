@@ -80,8 +80,8 @@
   <ItemGroup>
     <Compile Include="Communication\CommonConfig.cs" />
     <Compile Include="Communication\Delegate.cs" />
-    <Compile Include="Communication\Events.cs" />
     <Compile Include="Communication\Excetions.cs" />
+    <Compile Include="Communication\Messages.cs" />
     <Compile Include="Communication\Package\CommunicatePackage\AsynReplyCommunicatePackage.cs" />
     <Compile Include="Communication\Package\CommunicatePackage\CommunicatePackage.cs" />
     <Compile Include="Communication\EndPoint\MiddlewareEndPoing.cs" />
