@@ -227,7 +227,8 @@ namespace ProtocolLibrary.CCProtocol
             public Seria_BaseMessage Message;
         }
 
-        [ProtoContract]
+        [ProtoContract,
+        ProtoInclude(10, typeof(Seria_C2CMessageVerificationRequestPackage))]
         public class Seria_C2CRequestPackage : Seria_RequestPackage
         {
             public Seria_C2CRequestPackage() : base() { }
@@ -275,6 +276,27 @@ namespace ProtocolLibrary.CCProtocol
                 get;
                 set;
             }
+        }
+
+        [ProtoContract]
+        public class Seria_C2CMessageVerificationRequestPackage : Seria_C2CRequestPackage
+        {
+            public Seria_C2CMessageVerificationRequestPackage() : base() { }
+
+            public Seria_C2CMessageVerificationRequestPackage(Seria_C2CMessageVerificationRequestPackage obj)
+                : base(obj as Seria_C2CRequestPackage)
+            {
+                this.MessageType = obj.MessageType;
+            }
+
+            public Seria_C2CMessageVerificationRequestPackage(Seria_C2CRequestPackage parent)
+                : base(parent)
+            {
+
+            }
+
+            [ProtoMember (1)]
+            public Seria_BaseMessageType MessageType;
         }
 
         [ProtoContract,
