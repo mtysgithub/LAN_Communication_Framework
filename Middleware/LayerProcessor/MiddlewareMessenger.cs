@@ -66,12 +66,12 @@ namespace Middleware.LayerProcessor
 
         public void RegistMessage(AbstractMessageType typMsg, Type t_Msg)
         {
-            throw new Exception("The method or operation is not implemented.");
+            mMessageFactory.RegistMessage(typMsg, t_Msg);
         }
 
         public AbstractMessage CreateMessage(AbstractMessageType typMsg)
         {
-            throw new Exception("The method or operation is not implemented.");
+            return mMessageFactory.CreateMessage(typMsg);
         }
 
         public void SendMessage(AbstractMessage msg)
