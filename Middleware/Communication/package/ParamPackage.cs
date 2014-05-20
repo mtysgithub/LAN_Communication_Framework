@@ -109,54 +109,54 @@ namespace Middleware.Communication.Package
                             throw new Exception("针对Bin数据尝试反序列失败，请检验数据格式: " + ex.ToString());
                         }
                     }
-                case (byte)SerializObjectType.RadioPackage:
-                    {
-                        try
-                        {
-                            byte[] bytObjContent = new byte[bytes.Length - 1];
-                            Buffer.BlockCopy(bytes, 1, bytObjContent, 0, bytObjContent.Length);
+                //case (byte)SerializObjectType.RadioPackage:
+                //    {
+                //        try
+                //        {
+                //            byte[] bytObjContent = new byte[bytes.Length - 1];
+                //            Buffer.BlockCopy(bytes, 1, bytObjContent, 0, bytObjContent.Length);
 
-                            CCCommunicateClass.Seria_RadioPackage serializeFormatPkg = null;
-                            RadioPackage ret = RadioPackage.Empty;
-                            {
-                                using (MemoryStream m = new MemoryStream(bytObjContent))
-                                {
-                                    CJNet_SerializeTool deSerializeTool = new CJNet_SerializeTool();
-                                    serializeFormatPkg = deSerializeTool.Deserialize(m, null, typeof(CCCommunicateClass.Seria_RadioPackage))
-                                                                    as CCCommunicateClass.Seria_RadioPackage;
-                                }
-                            }
-                            ret.ParseSerializeData(serializeFormatPkg);
-                            return ret;
-                        }
-                        catch (System.Exception ex)
-                        {
-                            throw new Exception("针对Bin数据尝试反序列失败，请检验数据格式: " + ex.ToString());
-                        }
-                    }
-                case (byte)SerializObjectType.C2CRadioPackage:
-                    {
-                        try
-                        {
-                            byte[] bytObjContent = new byte[bytes.Length - 1];
-                            Buffer.BlockCopy(bytes, 1, bytObjContent, 0, bytObjContent.Length);
+                //            CCCommunicateClass.Seria_RadioPackage serializeFormatPkg = null;
+                //            RadioPackage ret = RadioPackage.Empty;
+                //            {
+                //                using (MemoryStream m = new MemoryStream(bytObjContent))
+                //                {
+                //                    CJNet_SerializeTool deSerializeTool = new CJNet_SerializeTool();
+                //                    serializeFormatPkg = deSerializeTool.Deserialize(m, null, typeof(CCCommunicateClass.Seria_RadioPackage))
+                //                                                    as CCCommunicateClass.Seria_RadioPackage;
+                //                }
+                //            }
+                //            ret.ParseSerializeData(serializeFormatPkg);
+                //            return ret;
+                //        }
+                //        catch (System.Exception ex)
+                //        {
+                //            throw new Exception("针对Bin数据尝试反序列失败，请检验数据格式: " + ex.ToString());
+                //        }
+                //    }
+                //case (byte)SerializObjectType.C2CRadioPackage:
+                //    {
+                //        try
+                //        {
+                //            byte[] bytObjContent = new byte[bytes.Length - 1];
+                //            Buffer.BlockCopy(bytes, 1, bytObjContent, 0, bytObjContent.Length);
 
-                            CCCommunicateClass.Seria_C2CRadioPackage serializeFormatPkg = null;
-                            C2CRadioPackage ret = C2CRadioPackage.Empty;
-                            using (MemoryStream m = new MemoryStream(bytObjContent))
-                            {
-                                CJNet_SerializeTool deSerializeTool = new CJNet_SerializeTool();
-                                serializeFormatPkg = deSerializeTool.Deserialize(m, null, typeof(CCCommunicateClass.Seria_C2CRadioPackage))
-                                                                as CCCommunicateClass.Seria_C2CRadioPackage;
-                            }
-                            ret.ParseSerializeData(serializeFormatPkg);
-                            return ret;
-                        }
-                        catch (System.Exception ex)
-                        {
-                            throw new Exception("针对Bin数据尝试反序列失败，请检验数据格式: " + ex.ToString());
-                        }
-                    }
+                //            CCCommunicateClass.Seria_C2CRadioPackage serializeFormatPkg = null;
+                //            C2CRadioPackage ret = C2CRadioPackage.Empty;
+                //            using (MemoryStream m = new MemoryStream(bytObjContent))
+                //            {
+                //                CJNet_SerializeTool deSerializeTool = new CJNet_SerializeTool();
+                //                serializeFormatPkg = deSerializeTool.Deserialize(m, null, typeof(CCCommunicateClass.Seria_C2CRadioPackage))
+                //                                                as CCCommunicateClass.Seria_C2CRadioPackage;
+                //            }
+                //            ret.ParseSerializeData(serializeFormatPkg);
+                //            return ret;
+                //        }
+                //        catch (System.Exception ex)
+                //        {
+                //            throw new Exception("针对Bin数据尝试反序列失败，请检验数据格式: " + ex.ToString());
+                //        }
+                //    }
                 default:
                     {
                         throw new NotImplementedException("二进制数据指向无法识别的类型");

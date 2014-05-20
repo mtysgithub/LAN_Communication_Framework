@@ -13,6 +13,7 @@ using Middleware.Device;
 using Middleware.Communication.Package.Internal;
 using Middleware.Interface;
 
+
 namespace Middleware.Communication.Package
 {
     public class RadioPackage : ParamPackage, ICCSerializeOperat<CCCommunicateClass.Seria_RadioPackage>
@@ -34,6 +35,11 @@ namespace Middleware.Communication.Package
         }
 
         #region SerializProcotol
+        protected enum SerializObjectType
+        {
+            RadioPackage,
+            C2CRadioPackage
+        }
         public override byte[] SerializeMiddlewareMessage()
         {
             byte[] bytRadioPkg = null;
@@ -51,6 +57,74 @@ namespace Middleware.Communication.Package
             Buffer.BlockCopy(bytRadioPkg, 0, bytWilSend, 1, bytRadioPkg.Length);
 
             return bytWilSend;
+        }
+        /// <summary>
+        /// 对二进制段做反序列化
+        /// </summary>
+        /// <param name="bytes">目标二进制字段</param>
+        /// <returns>反序列化结果</returns>
+        public ParamPackage DeserializeMessage(byte[] bytes)
+        {
+            if ((null == bytes) || (0 == bytes.Length))
+            {
+                throw new Exception("Bin数据不存在或为空");
+            }
+            byte bytOpjTypeCodec = bytes[0];
+            switch (bytOpjTypeCodec)
+            {
+                case (byte)SerializObjectType.RadioPackage:
+                    {
+                        try
+                        {
+                            byte[] bytObjContent = new byte[bytes.Length - 1];
+                            Buffer.BlockCopy(bytes, 1, bytObjContent, 0, bytObjContent.Length);
+
+                            CCCommunicateClass.Seria_RadioPackage serializeFormatPkg = null;
+                            RadioPackage ret = RadioPackage.Empty;
+                            {
+                                using (MemoryStream m = new MemoryStream(bytObjContent))
+                                {
+                                    CJNet_SerializeTool deSerializeTool = new CJNet_SerializeTool();
+                                    serializeFormatPkg = deSerializeTool.Deserialize(m, null, typeof(CCCommunicateClass.Seria_RadioPackage))
+                                                                    as CCCommunicateClass.Seria_RadioPackage;
+                                }
+                            }
+                            ret.ParseSerializeData(serializeFormatPkg);
+                            return ret;
+                        }
+                        catch (System.Exception ex)
+                        {
+                            throw new Exception("针对Bin数据尝试反序列失败，请检验数据格式: " + ex.ToString());
+                        }
+                    }
+                case (byte)SerializObjectType.C2CRadioPackage:
+                    {
+                        try
+                        {
+                            byte[] bytObjContent = new byte[bytes.Length - 1];
+                            Buffer.BlockCopy(bytes, 1, bytObjContent, 0, bytObjContent.Length);
+
+                            CCCommunicateClass.Seria_C2CRadioPackage serializeFormatPkg = null;
+                            C2CRadioPackage ret = C2CRadioPackage.Empty;
+                            using (MemoryStream m = new MemoryStream(bytObjContent))
+                            {
+                                CJNet_SerializeTool deSerializeTool = new CJNet_SerializeTool();
+                                serializeFormatPkg = deSerializeTool.Deserialize(m, null, typeof(CCCommunicateClass.Seria_C2CRadioPackage))
+                                                                as CCCommunicateClass.Seria_C2CRadioPackage;
+                            }
+                            ret.ParseSerializeData(serializeFormatPkg);
+                            return ret;
+                        }
+                        catch (System.Exception ex)
+                        {
+                            throw new Exception("针对Bin数据尝试反序列失败，请检验数据格式: " + ex.ToString());
+                        }
+                    }
+                default:
+                    {
+                        throw new NotImplementedException("二进制数据指向无法识别的类型");
+                    }
+            }
         }
         #endregion
 
