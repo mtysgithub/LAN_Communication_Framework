@@ -63,7 +63,7 @@ namespace Middleware.Communication.Package
         /// </summary>
         /// <param name="bytes">目标二进制字段</param>
         /// <returns>反序列化结果</returns>
-        public ParamPackage DeserializeMessage(byte[] bytes)
+        public RadioPackage DeserializeMessage(byte[] bytes)
         {
             if ((null == bytes) || (0 == bytes.Length))
             {
