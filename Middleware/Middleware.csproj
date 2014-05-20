@@ -92,9 +92,11 @@
     <Compile Include="Communication\Package\CommunicatePackage\GroupComunicatePackage.cs" />
     <Compile Include="Communication\Package\CommunicatePackage\Interface\ICommunicatePackage.cs" />
     <Compile Include="Communication\Package\Internal\C2CMessageRadioPackage.cs" />
+    <Compile Include="Communication\Package\Internal\C2CMessageVerificationReplyPackage.cs" />
+    <Compile Include="Communication\Package\Internal\C2CMessageVerificationRequestPackage.cs" />
     <Compile Include="Communication\Package\Internal\C2CRadioPackage.cs" />
     <Compile Include="Communication\Package\Internal\C2CReplyPackage.cs" />
-    <Compile Include="Communication\Package\Internal\C2CRequestTransPackage.cs" />
+    <Compile Include="Communication\Package\Internal\C2CRequestPackage.cs" />
     <Compile Include="Communication\Package\IParamPackage.cs" />
     <Compile Include="Communication\Package\ParamPackage.cs" />
     <Compile Include="Communication\Package\RadioPackage.cs" />
