@@ -8,29 +8,29 @@ namespace Middleware.Communication.Message
 {
     public abstract class AbstractMessageType
     {
-        //private string mName;
-        //private uint mId;
+        private string mName;
+        private uint mId;
 
-        //public AbstractMessageType(string name, uint id)
-        //{
-        //    mName = name;
-        //    mId = id;
-        //}
+        public AbstractMessageType(string name, uint id)
+        {
+            mName = name;
+            mId = id;
+        }
     }
 
-    public abstract class  AbstractMessage : EventArgs
+    public abstract class AbstractMessage : ParamPackage
     {
-        //private AbstractMessageType mMessageType = null;
+        private AbstractMessageType mMessageType = null;
 
-        //public AbstractMessageType Type
-        //{
-        //    get { return mMessageType; }
-        //    set { mMessageType = value;}
-        //}
+        public AbstractMessageType Type
+        {
+            get { return mMessageType; }
+            set { mMessageType = value; }
+        }
 
-        //public AbstractMessage()
-        //{
-	        
-        //}
+        public AbstractMessage()
+        {
+
+        }
     }
 }

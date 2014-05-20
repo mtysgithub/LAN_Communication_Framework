@@ -359,17 +359,24 @@ namespace Middleware.Device
         /// 监听一种设备消息
         /// </summary>
         /// <param name="messenger">目标设备</param>
-        /// <param name="t_msg">消息类</param>
+        /// <param name="t_msg">消息定义</param>
         public void Listen(ClientDevice messenger, AbstractMessageType evt) { throw new NotImplementedException(); }
 
         /// <summary>
         /// 注册本设备支持的消息
         /// </summary>
-        /// <param name="t_msg"></param>
+        /// <param name="t_msg">消息定义</param>
         public void RegistMessage(AbstractMessageType t_msg) { throw new NotImplementedException(); }
 
         /// <summary>
-        /// 事件接收回掉
+        /// 创建一条消息
+        /// </summary>
+        /// <param name="t_msg">消息定义</param>
+        /// <returns></returns>
+        public AbstractMessage CreateMessage(AbstractMessageType t_msg) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// 事件接收回调
         /// </summary>
         public event MessageRecivedHandler MessageRecived = null;
 

@@ -170,17 +170,24 @@ namespace Middleware.Interface.Ex
         /// 监听一种设备消息
         /// </summary>
         /// <param name="messenger">目标设备</param>
-        /// <param name="t_msg">消息类</param>
+        /// <param name="t_msg">消息定义</param>
         void Listen(ClientDevice messenger, AbstractMessageType t_msg);
 
         /// <summary>
         /// 注册本设备支持的消息
         /// </summary>
-        /// <param name="t_msg"></param>
+        /// <param name="t_msg">消息定义</param>
         void RegistMessage(AbstractMessageType t_msg);
 
         /// <summary>
-        /// 事件接收回掉
+        /// 创建一条消息
+        /// </summary>
+        /// <param name="t_msg">消息定义</param>
+        /// <returns></returns>
+        AbstractMessage CreateMessage(AbstractMessageType t_msg);
+
+        /// <summary>
+        /// 事件接收回调
         /// </summary>
         event MessageRecivedHandler MessageRecived;
 
