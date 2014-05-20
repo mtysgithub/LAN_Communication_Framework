@@ -25,12 +25,12 @@ namespace Middleware.Communication.Message
         public AbstractMessageType Type
         {
             get { return mMessageType; }
-            set { mMessageType = value; }
+            private set { mMessageType = value; }
         }
 
-        public AbstractMessage()
+        public AbstractMessage(AbstractMessageType t_msg)
         {
-
+            mMessageType = t_msg;
         }
     }
 }
