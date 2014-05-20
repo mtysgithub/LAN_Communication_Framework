@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Middleware.Communication.Message
 {
-    public abstract class BaseMessageType
+    public class BaseMessageType
     {
         protected string mName;
         protected uint mId;

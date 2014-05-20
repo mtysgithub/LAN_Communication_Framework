@@ -6,7 +6,7 @@ using Middleware.Communication.Package;
 
 namespace Middleware.Communication.Message
 {
-    public abstract class BaseMessage : ParamPackage
+    public class BaseMessage : ParamPackage
     {
         private BaseMessageType mMessageType = null;
 
