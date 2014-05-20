@@ -19,10 +19,29 @@ namespace ProtocolLibrary.CCProtocol
             return typList;
         }
 
+        [ProtoContract]
+        public class Seria_BaseMessageType
+        {
+            public Seria_BaseMessageType() { }
+
+            public Seria_BaseMessageType(Seria_BaseMessageType obj)
+            {
+                this.Name = obj.Name;
+                this.Id = obj.Id;
+            }
+
+            [ProtoMember (1)]
+            public string Name;
+
+            [ProtoMember(2)]
+            public uint Id;
+        }
+
         [ProtoContract,
         ProtoInclude(1, typeof(Seria_RadioPackage)),
         ProtoInclude(2, typeof(Seria_RequestPackage)),
-        ProtoInclude(3, typeof(Seria_ReplyPackage))]
+        ProtoInclude(3, typeof(Seria_ReplyPackage)),
+        ProtoInclude(9, typeof(Seria_BaseMessage))]
         public class Seria_ParamPackage
         {
             public Seria_ParamPackage() { }
@@ -38,6 +57,27 @@ namespace ProtocolLibrary.CCProtocol
                 get;
                 set;
             }
+        }
+
+        [ProtoContract]
+        public class Seria_BaseMessage : Seria_ParamPackage
+        {
+            public Seria_BaseMessage() : base() { }
+
+            public Seria_BaseMessage(Seria_BaseMessage obj)
+                : base(obj as Seria_ParamPackage)
+            {
+                this.MessageType = obj.MessageType;
+            }
+
+            public Seria_BaseMessage(Seria_ParamPackage parent)
+                : base(parent)
+            {
+
+            }
+
+            [ProtoMember (1)]
+            public Seria_BaseMessageType MessageType;
         }
 
         [ProtoContract,
@@ -175,13 +215,16 @@ namespace ProtocolLibrary.CCProtocol
             public Seria_C2CMessageRadioPackage(Seria_C2CMessageRadioPackage obj)
                 : base(obj as Seria_C2CRadioPackage)
             {
-                //TODO.
+                this.Message = obj.Message;
             }
 
             public Seria_C2CMessageRadioPackage(Seria_C2CRadioPackage paret)
                 : base(paret) 
             {
             }
+
+            [ProtoMember (1)]
+            public Seria_BaseMessage Message;
         }
 
         [ProtoContract]
