@@ -33,6 +33,7 @@ using Middleware.Communication.EndPoint.Tcp;
 using Middleware.Communication.Excetion;
 using Middleware.Communication.Message;
 using Middleware.Communication.Package.CommunicatePackage;
+using Middleware.LayerProcessor.Interfcace;
 
 namespace Middleware.LayerProcessor
 {
@@ -44,6 +45,7 @@ namespace Middleware.LayerProcessor
             _binProcessferProcessor = new BinTransferLayer(this);
             _middlewareCommunicateProcessor = new MiddlewareCommunicateLayer(this);
             _groupCommunicateProcessor = new GroupCommunicateLayer(this);
+            mMiddlewareMessenger = MiddlewareMessenger.Instance;
 
             _asynSendRequestRunner = new SequentialItemProcessor<RequestCommunicatePackage>(this.__CoAsynSendRequestRunning);
             _asynFeedbackCommunicateReplyMessageRunner = new SequentialItemProcessor<ReplyCommunicatePackage>(this.__AsynFeedbackCommunicateReplyMessageRunning);
@@ -60,6 +62,7 @@ namespace Middleware.LayerProcessor
             _binProcessferProcessor.Start();
             _middlewareCommunicateProcessor.Start();
             _groupCommunicateProcessor.Start();
+            mMiddlewareMessenger.Initialize(_groupCommunicateProcessor, _middlewareCommunicateProcessor, CoMessageRecived_OutisdeNotify);
 
             _asynSendRequestRunner.Start();
             _asynFeedbackCommunicateReplyMessageRunner.Start();
@@ -79,6 +82,7 @@ namespace Middleware.LayerProcessor
             _asynFeedbackCommunicateReplyMessageRunner.Stop();
             _asynSendRequestRunner.Stop();
 
+            mMiddlewareMessenger.Release();
             _groupCommunicateProcessor.Stop();
             _middlewareCommunicateProcessor.Stop();
             _binProcessferProcessor.Stop();
@@ -88,8 +92,9 @@ namespace Middleware.LayerProcessor
 
         public virtual void Dispose()
         {
-            _middlewareCommunicateProcessor.Dispose();
+            mMiddlewareMessenger.Release();
             _groupCommunicateProcessor.Dispose();
+            _middlewareCommunicateProcessor.Dispose();
             _binProcessferProcessor.Dispose();
         }
         #endregion
@@ -756,6 +761,14 @@ namespace Middleware.LayerProcessor
         }
         #endregion
 
+        #region 中间件消息层接口
+        protected void CoListen(ClientDevice messenger, AbstractMessageType typMsg) { throw new NotImplementedException(); }
+        protected void CoRegistMessage(AbstractMessageType typMsg, Type t_Msg) { throw new NotImplementedException(); }
+        protected AbstractMessage CoCreateMessage(AbstractMessageType typMsg) { throw new NotImplementedException(); }
+        protected void CoSendMessage(AbstractMessage msg) { throw new NotImplementedException(); }
+        protected MessageRecivedHandler CoMessageRecived_OutisdeNotify = null;
+        #endregion
+
         internal GroupCommunicateLayer GroupCommunicateProcessor
         {
             get { return _groupCommunicateProcessor; }
@@ -781,6 +794,7 @@ namespace Middleware.LayerProcessor
         private GroupCommunicateLayer _groupCommunicateProcessor = null;
         private MiddlewareCommunicateLayer _middlewareCommunicateProcessor = null;
         private BinTransferLayer _binProcessferProcessor = null;
+        private IMiddlewareMessenger mMiddlewareMessenger = null;
 
         private ClientDevice _selfDevice = null;
         private bool _bIsOnline = false;

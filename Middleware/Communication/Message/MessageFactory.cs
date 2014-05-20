@@ -30,6 +30,8 @@ namespace Middleware.Communication.Message
             }
         }
 
+        protected MessageFactory() { }
+
         public void RegistMessage(AbstractMessageType typMsg, Type t_Msg)
         {
             if ((null != typMsg) && (!mTypTable.ContainsKey(typMsg.Id)))

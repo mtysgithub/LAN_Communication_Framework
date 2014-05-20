@@ -59,6 +59,8 @@ namespace Middleware.Device
             base.CoRemotRadioRecived_OutsideNotify += this.__OutsideRadioMessageRecived;
             base.CoRadioErrorRecived_OutsideNotify += this.__AsynCommunicatErrorRecived;
 
+            base.CoMessageRecived_OutisdeNotify += this.__OutsideMessageRecived;
+
             base.CoStart();
         }
 
@@ -82,6 +84,8 @@ namespace Middleware.Device
 
             base.CoRemotRadioRecived_OutsideNotify += this.__OutsideRadioMessageRecived;
             base.CoRadioErrorRecived_OutsideNotify += this.__AsynCommunicatErrorRecived;
+
+            base.CoMessageRecived_OutisdeNotify += this.__OutsideMessageRecived;
 
             base.CoStart();
         }
@@ -360,26 +364,38 @@ namespace Middleware.Device
         /// </summary>
         /// <param name="messenger">目标设备</param>
         /// <param name="typMsg">消息定义</param>
-        public void Listen(ClientDevice messenger, AbstractMessageType typMsg) { throw new NotImplementedException(); }
+        public void Listen(ClientDevice messenger, AbstractMessageType typMsg) 
+        {
+            base.CoListen(messenger, typMsg);
+        }
 
         /// <summary>
         /// 注册本设备支持的消息
         /// </summary>
         /// <param name="typMsg">消息定义</param>
-        public void RegistMessage(AbstractMessageType typMsg, Type t_Msg) { throw new NotImplementedException(); }
+        public void RegistMessage(AbstractMessageType typMsg, Type t_Msg) 
+        {
+            base.CoRegistMessage(typMsg, t_Msg);
+        }
 
         /// <summary>
         /// 创建一条消息
         /// </summary>
         /// <param name="typMsg">消息定义</param>
         /// <returns></returns>
-        public AbstractMessage CreateMessage(AbstractMessageType typMsg) { throw new NotImplementedException(); }
+        public AbstractMessage CreateMessage(AbstractMessageType typMsg) 
+        {
+            return base.CoCreateMessage(typMsg);
+        }
 
         /// <summary>
         /// 发送一条消息
         /// </summary>
         /// <param name="msg">消息包</param>
-        public void SendMessage(AbstractMessage msg) { throw new NotImplementedException(); }
+        public void SendMessage(AbstractMessage msg) 
+        {
+            base.CoSendMessage(msg);
+        }
 
         /// <summary>
         /// 事件接收回调
@@ -409,6 +425,14 @@ namespace Middleware.Device
             if (null != this.RemotRadioRecived)
             {
                 this.RemotRadioRecived(radioPkg);
+            }
+        }
+
+        private void __OutsideMessageRecived(ClientDevice sender, AbstractMessage msg)
+        {
+            if(null != this.MessageRecived)
+            {
+                this.MessageRecived(sender, msg);
             }
         }
     }
