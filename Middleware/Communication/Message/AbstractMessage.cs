@@ -6,18 +6,6 @@ using Middleware.Communication.Package;
 
 namespace Middleware.Communication.Message
 {
-    public abstract class AbstractMessageType
-    {
-        private string mName;
-        private uint mId;
-
-        public AbstractMessageType(string name, uint id)
-        {
-            mName = name;
-            mId = id;
-        }
-    }
-
     public abstract class AbstractMessage : ParamPackage
     {
         private AbstractMessageType mMessageType = null;
@@ -25,7 +13,7 @@ namespace Middleware.Communication.Message
         public AbstractMessageType Type
         {
             get { return mMessageType; }
-            private set { mMessageType = value; }
+            internal set { mMessageType = value; }
         }
 
         public AbstractMessage(AbstractMessageType t_msg)
