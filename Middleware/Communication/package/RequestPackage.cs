@@ -71,11 +71,20 @@ namespace Middleware.Communication.Package
         protected ClientDevice _sourDevice = ClientDevice.Empty;
         protected bool _waitResponse = false;
 
+        private bool mbIsEmpty = false;
+
+        public bool IsEmpty
+        {
+            get { return this.mbIsEmpty; }
+        }
+
         public static RequestPackage Empty
         {
             get 
             {
-                return new RequestPackage();
+                RequestPackage obj = new RequestPackage();
+                obj.mbIsEmpty = true;
+                return obj;
             }
         }
     }

@@ -73,7 +73,10 @@ namespace Middleware.Communication.Package.Internal
 
         public new static C2CRadioPackage Empty
         {
-            get { return new C2CRadioPackage(); }
+            get 
+            { 
+                return new C2CRadioPackage(); 
+            }
         }
     }
 }

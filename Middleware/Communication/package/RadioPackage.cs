@@ -183,9 +183,21 @@ namespace Middleware.Communication.Package
         }
         private string _radioName = null;
 
+        private bool mbIsEmpty = false;
+
+        public bool IsEmpty
+        {
+            get { return mbIsEmpty; }
+        }
+
         public static RadioPackage Empty
         {
-            get { return new RadioPackage(); }
+            get 
+            {
+                RadioPackage obj = new RadioPackage(); 
+                obj.mbIsEmpty = true;
+                return obj;
+            }
         }
     }
 }

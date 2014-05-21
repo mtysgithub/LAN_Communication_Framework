@@ -704,7 +704,7 @@ namespace Middleware.LayerProcessor
         {
             C2CRequestPackage c2cReqtPkg = reqtMTPkg.C2CNormalTransPackage;
 
-            if (null != c2cReqtPkg.OutSideMessage)
+            if (!c2cReqtPkg.OutSideMessage.IsEmpty)
             {
                 if (c2cReqtPkg.WaittingResponse)
                 {
@@ -768,7 +768,7 @@ namespace Middleware.LayerProcessor
         #region 群组传输层接口
         internal void RadioTransferMessageRecived(C2CRadioPackage c2cRadioPkg)
         {
-            if (null != c2cRadioPkg.OutsideMessage)
+            if (!c2cRadioPkg.OutsideMessage.IsEmpty)
             {
                 //outside notify
                 this.CoRemotRadioRecived_OutsideNotify(c2cRadioPkg.OutsideMessage);
