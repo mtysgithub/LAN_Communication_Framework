@@ -13,9 +13,11 @@ namespace Middleware.LayerProcessor.Interfcace
         /// <summary>
         /// 初始化
         /// </summary>
+        /// <param name="coreLogicProcessor"></param>
         /// <param name="groupCommunicateLayer"></param>
         /// <param name="middlewareCommunicateLayer"></param>
-        void Initialize(GroupCommunicateLayer groupCommunicateLayer,
+        void Initialize(MiddlewareCorelogicLayer coreLogicProcessor,
+                                GroupCommunicateLayer groupCommunicateLayer,
                                 MiddlewareCommunicateLayer middlewareCommunicateLayer, MessageRecivedHandler handler);
 
         /// <summary>

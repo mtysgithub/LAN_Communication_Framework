@@ -62,7 +62,7 @@ namespace Middleware.LayerProcessor
             _binProcessferProcessor.Start();
             _middlewareCommunicateProcessor.Start();
             _groupCommunicateProcessor.Start();
-            mMiddlewareMessenger.Initialize(_groupCommunicateProcessor, _middlewareCommunicateProcessor, CoMessageRecived_OutisdeNotify);
+            mMiddlewareMessenger.Initialize(this, _groupCommunicateProcessor, _middlewareCommunicateProcessor, CoMessageRecived_OutisdeNotify);
 
             _asynSendRequestRunner.Start();
             _asynFeedbackCommunicateReplyMessageRunner.Start();
