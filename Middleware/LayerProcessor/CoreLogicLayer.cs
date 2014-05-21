@@ -785,10 +785,22 @@ namespace Middleware.LayerProcessor
         #endregion
 
         #region 中间件消息层接口
-        protected void CoListen(ClientDevice messenger, BaseMessageType typMsg) { throw new NotImplementedException(); }
-        protected void CoRegistMessage(BaseMessageType typMsg, Type t_Msg) { throw new NotImplementedException(); }
-        protected BaseMessage CoCreateMessage(BaseMessageType typMsg) { throw new NotImplementedException(); }
-        protected void CoSendMessage(BaseMessage msg) { throw new NotImplementedException(); }
+        protected void CoListen(ClientDevice messenger, BaseMessageType typMsg) 
+        {
+            mMiddlewareMessenger.Listen(messenger, typMsg);
+        }
+        protected void CoRegistMessage(BaseMessageType typMsg, Type t_Msg) 
+        {
+            mMiddlewareMessenger.RegistMessage(typMsg, t_Msg);
+        }
+        protected BaseMessage CoCreateMessage(BaseMessageType typMsg) 
+        {
+            return mMiddlewareMessenger.CreateMessage(typMsg);
+        }
+        protected void CoSendMessage(BaseMessage msg) 
+        {
+            mMiddlewareMessenger.SendMessage(msg);
+        }
         protected MessageRecivedHandler CoMessageRecived_OutisdeNotify = null;
         #endregion
 
