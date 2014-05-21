@@ -11,8 +11,8 @@ namespace Middleware.Communication.Message
 {
     public class BaseMessageType : ICCSerializeOperat<CCCommunicateClass.Seria_BaseMessageType>
     {
-        protected string mName;
-        protected uint mId;
+        protected string mName = string.Empty;
+        protected uint mId = 0x8fffffff;
 
         public string Name
         {

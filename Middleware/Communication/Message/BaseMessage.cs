@@ -19,6 +19,8 @@ namespace Middleware.Communication.Message
             internal set { mMessageType = value; }
         }
 
+        public BaseMessage() : base() { }
+
         public BaseMessage(BaseMessageType t_msg)
         {
             mMessageType = t_msg;
