@@ -43,8 +43,9 @@ namespace Middleware.LayerProcessor
         protected Hashtable mMsgTyp2Dispatcher = null;
         private const string mDispatcherPrefixi = "Dispatcher_";
 
-        protected Hashtable mListeningGroup = null;
-        protected Hashtable mSpeakGroup = null;
+        protected Hashtable mListeningGroup2Device = null;
+        protected Hashtable mListeningDevice2MsgID = null;
+        protected Hashtable mSpeakMsgID2Group = null;
 
         protected MiddlewareMessenger() { }
 
@@ -54,8 +55,9 @@ namespace Middleware.LayerProcessor
                                 MiddlewareCommunicateLayer middlewareCommunicateProcessor,
                                 MessageRecivedHandler coMsgRecivedHandler)
         {
-            mListeningGroup = new Hashtable();
-            mSpeakGroup = new Hashtable();
+            mListeningGroup2Device = new Hashtable();
+            mListeningDevice2MsgID = new Hashtable();
+            mSpeakMsgID2Group = new Hashtable();
 
             mCoreLogicProcessor = coreLogicProcessor;
             mGroupCommunicateProcessor = groupCommunicateProcessor;
@@ -77,15 +79,18 @@ namespace Middleware.LayerProcessor
             mMiddlewareCommunicateProcessor = null;
             mGroupCommunicateProcessor = null;
 
-            mSpeakGroup.Clear();
-            mSpeakGroup = null;
-            mListeningGroup.Clear();
-            mListeningGroup = null;
+            mSpeakMsgID2Group.Clear();
+            mSpeakMsgID2Group = null;
+            mListeningDevice2MsgID.Clear();
+            mListeningDevice2MsgID = null;
+            mListeningGroup2Device.Clear();
+            mListeningGroup2Device = null;
         }
 
         public void Listen(ClientDevice messenger, BaseMessageType typMsg)
         {
-            if (mListeningGroup.ContainsKey(typMsg.Id))
+            if (mListeningDevice2MsgID.ContainsKey(messenger.Detail) &&
+                (mListeningDevice2MsgID[messenger.Detail] as List<uint>).Contains(typMsg.Id))
             {
                 throw new InvalidOperationException("该设备消息已被监听");
             }
@@ -103,6 +108,8 @@ namespace Middleware.LayerProcessor
                                                                 mCoreLogicProcessor.SelfDevice,
                                                                 messenger,
                                                                 true);
+
+            //验证流程
             MiddlewareTransferPackage mtReplyBasePkg = null;
             try
             {
@@ -113,24 +120,31 @@ namespace Middleware.LayerProcessor
             {
                 throw new Exception("尝试监听一个设备消息时遭遇网络异常：" + ex.ToString());
             }
-
             ReplyMTPackage mtReplyPkg = mtReplyBasePkg as ReplyMTPackage;
             C2CReplyPackage c2cReplyPkg = mtReplyPkg.C2CReplyPackage;
             if (Communication.Package.ReplyPackage.Middleware_ReplyInfo.S_OK == c2cReplyPkg.ReplyState)
             {
+                //加入监听群组
                 string gourp_detail = Encoding.ASCII.GetString(c2cReplyPkg.ParamDefalutValues["group_detail"]);
-                GroupDevice wilListenGropup = null;
+                GroupDevice wilListenGroup = null;
                 try
                 {
-                    wilListenGropup = mGroupCommunicateProcessor.GetGroup(gourp_detail);
-                    mGroupCommunicateProcessor.JoinGroup(wilListenGropup, 
+                    wilListenGroup = mGroupCommunicateProcessor.GetGroup(gourp_detail);
+                    mGroupCommunicateProcessor.JoinGroup(wilListenGroup, 
                                                             Communication.CommunicationConfig.GroupMemberRole.Listener);
 
                 }catch(Exception ex)
                 {
                     throw new Exception("尝试监听一个设备消息时遭遇网络异常：" + ex.ToString());
                 }
-                mListeningGroup.Add(typMsg.Id, wilListenGropup);
+
+                if (!mListeningDevice2MsgID.ContainsKey(messenger.Detail))
+                {
+                    mListeningDevice2MsgID.Add(messenger.Detail, new List<uint>());
+                }
+                (mListeningDevice2MsgID[messenger.Detail] as List<uint>).Add(typMsg.Id);
+
+                mListeningGroup2Device.Add(wilListenGroup.Detail, messenger);
             }else
             {
                 throw new Exception("尝试监听一个设备消息时遭遇网络异常：" + 
@@ -151,7 +165,7 @@ namespace Middleware.LayerProcessor
             {
                 throw new Exception("试图注册消息时遭遇网络失败: " + ex.ToString());
             }
-            mSpeakGroup.Add(typMsg.Id, group);
+            mSpeakMsgID2Group.Add(typMsg.Id, group);
         }
 
         public BaseMessage CreateMessage(BaseMessageType typMsg)
@@ -182,13 +196,13 @@ namespace Middleware.LayerProcessor
         public C2CReplyPackage VertificationInfoRecived(C2CRequestPackage vertification)
         {
             uint typMsg = BitConverter.ToUInt32(vertification.ParamDefalutValues["MessageType"], 0);
-            if (mSpeakGroup.ContainsKey(typMsg))
+            if (mSpeakMsgID2Group.ContainsKey(typMsg))
             {
                 C2CReplyPackage replyPkg = new C2CReplyPackage(ReplyPackage.Middleware_ReplyInfo.S_OK,
                                                 new Dictionary<string, byte[]>() 
                                                 { 
                                                     { "group_detail", 
-                                                        Encoding.ASCII.GetBytes((mSpeakGroup[typMsg] as GroupDevice).Detail)} 
+                                                        Encoding.ASCII.GetBytes((mSpeakMsgID2Group[typMsg] as GroupDevice).Detail)} 
                                                 });
                 return replyPkg;
             }
@@ -201,6 +215,14 @@ namespace Middleware.LayerProcessor
                                                         Encoding.UTF8.GetBytes("所监听的消息不存在或尚未注册")} 
                                                 });
                 return replyPkg;
+            }
+        }
+
+        public void MessagePackageIncoming(C2CMessageRadioPackage radioPkg)
+        {
+            if(null != (radioPkg.Message))
+            {
+                this.MessageRecived(mListeningGroup2Device[radioPkg.Group.Detail] as ClientDevice, radioPkg.Message);
             }
         }
 

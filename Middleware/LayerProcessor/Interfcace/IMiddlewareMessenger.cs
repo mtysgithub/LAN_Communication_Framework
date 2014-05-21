@@ -60,6 +60,12 @@ namespace Middleware.LayerProcessor.Interfcace
         C2CReplyPackage VertificationInfoRecived(C2CRequestPackage vertification);
 
         /// <summary>
+        /// 消息包处理
+        /// </summary>
+        /// <param name="radioPkg"></param>
+        void MessagePackageIncoming(C2CMessageRadioPackage radioPkg);
+
+        /// <summary>
         /// 事件接收回调
         /// </summary>
         event MessageRecivedHandler MessageRecived;

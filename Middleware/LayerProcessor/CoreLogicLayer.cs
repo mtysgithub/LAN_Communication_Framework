@@ -773,7 +773,14 @@ namespace Middleware.LayerProcessor
                 //outside notify
                 this.CoRemotRadioRecived_OutsideNotify(c2cRadioPkg.OutsideMessage);
             }
-            //暂时没有额外流程，保留扩展性
+            else
+            {
+                //消息模块数据包
+                if (null != (c2cRadioPkg as C2CMessageRadioPackage))
+                {
+                    mMiddlewareMessenger.MessagePackageIncoming(c2cRadioPkg as C2CMessageRadioPackage);
+                }
+            }
         }
         #endregion
 
