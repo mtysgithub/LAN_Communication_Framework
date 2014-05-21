@@ -46,12 +46,17 @@ namespace Middleware.Communication.Message
         #region ICCSerializeOperat<CCCommunicateClass.Seria_BaseMessageType>
         public void ParseSerializeData(CCCommunicateClass.Seria_BaseMessageType obj)
         {
-            throw new Exception("The method or operation is not implemented.");
+            this.mId = obj.Id;
+            this.mName = obj.Name;
         }
 
-        public new CCCommunicateClass.Seria_BaseMessageType ExportSerializeData()
+        public CCCommunicateClass.Seria_BaseMessageType ExportSerializeData()
         {
-            throw new Exception("The method or operation is not implemented.");
+            CCCommunicateClass.Seria_BaseMessageType serFormatPkg =
+                new CCCommunicateClass.Seria_BaseMessageType();
+            serFormatPkg.Id = this.mId;
+            serFormatPkg.Name = this.mName;
+            return serFormatPkg;
         }
         #endregion
     }

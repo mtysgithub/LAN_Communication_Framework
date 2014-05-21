@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace Middleware.Communication.Package.Internal
         {
             get { return mMessage; }
         }
+        public C2CMessageRadioPackage() : base() { }
 
         public C2CMessageRadioPackage(GroupDevice targetDevice, BaseMessage msg)
             : base(targetDevice, "C2CMessageRadioPackage_" + msg.Type.Name, null)
@@ -27,17 +29,42 @@ namespace Middleware.Communication.Package.Internal
 
         public override byte[] SerializeMiddlewareMessage()
         {
-            throw new NotImplementedException();
+            byte[] bytMessageRadioPkg = null;
+            CJNet_SerializeTool serializeTool = new CJNet_SerializeTool();
+            using (MemoryStream m = new MemoryStream())
+            {
+                serializeTool.Serialize(m, this.ExportSerializeData());
+                bytMessageRadioPkg = m.ToArray();
+            }
+
+            byte objTypeCodec = (byte)SerializObjectType.C2CMessageRadioPackage;
+
+            byte[] bytWilSend = new byte[1 + bytMessageRadioPkg.Length];
+            bytWilSend[0] = objTypeCodec;
+            Buffer.BlockCopy(bytMessageRadioPkg, 0, bytWilSend, 1, bytMessageRadioPkg.Length);
+
+            return bytWilSend;
         }
 
+        #region ICCSerializeOperat<CCCommunicateClass.Seria_C2CMessageRadioPackage>
         public new CCCommunicateClass.Seria_C2CMessageRadioPackage ExportSerializeData()
         {
-            throw new Exception("The method or operation is not implemented.");
+            CCCommunicateClass.Seria_C2CMessageRadioPackage serFormatPkg =
+                new CCCommunicateClass.Seria_C2CMessageRadioPackage(base.ExportSerializeData());
+            serFormatPkg.Message = this.mMessage.ExportSerializeData();
+            return serFormatPkg;
         }
 
         public void ParseSerializeData(CCCommunicateClass.Seria_C2CMessageRadioPackage obj)
         {
-            throw new Exception("The method or operation is not implemented.");
+            base.ParseSerializeData(obj as CCCommunicateClass.Seria_C2CRadioPackage);
+            this.mMessage.ParseSerializeData(obj.Message);
         }
+
+        public static C2CMessageRadioPackage Empty
+        {
+            get { return new C2CMessageRadioPackage(); }
+        }
+        #endregion
     }
 }

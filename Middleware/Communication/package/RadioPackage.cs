@@ -123,7 +123,26 @@ namespace Middleware.Communication.Package
                     }
                 case (byte)SerializObjectType.C2CMessageRadioPackage:
                     {
-                        throw new NotImplementedException();
+                        try
+                        {
+                            byte[] bytObjContent = new byte[bytes.Length - 1];
+                            Buffer.BlockCopy(bytes, 1, bytObjContent, 0, bytObjContent.Length);
+
+                            CCCommunicateClass.Seria_C2CMessageRadioPackage serializeFormatPkg = null;
+                            using (MemoryStream m = new MemoryStream(bytObjContent))
+                            {
+                                CJNet_SerializeTool deSerializeTool = new CJNet_SerializeTool();
+                                serializeFormatPkg = deSerializeTool.Deserialize(m, null, typeof(CCCommunicateClass.Seria_C2CMessageRadioPackage))
+                                                                as CCCommunicateClass.Seria_C2CMessageRadioPackage;
+                            }
+                            C2CMessageRadioPackage ret = C2CMessageRadioPackage.Empty;
+                            ret.ParseSerializeData(serializeFormatPkg);
+                            return ret;
+                        }
+                        catch (System.Exception ex)
+                        {
+                            throw new Exception("针对Bin数据尝试反序列失败，请检验数据格式: " + ex.ToString());
+                        }
                     }
                 default:
                     {

@@ -42,12 +42,16 @@ namespace Middleware.Communication.Message
         #region ICCSerializeOperat<CCCommunicateClass.Seria_BaseMessage>
         public void ParseSerializeData(CCCommunicateClass.Seria_BaseMessage obj)
         {
-            throw new Exception("The method or operation is not implemented.");
+            base.ParseSerializeData(obj as CCCommunicateClass.Seria_ParamPackage);
+            this.mMessageType.ParseSerializeData(obj.MessageType);
         }
 
         public new CCCommunicateClass.Seria_BaseMessage ExportSerializeData()
         {
-            throw new Exception("The method or operation is not implemented.");
+            CCCommunicateClass.Seria_BaseMessage serFormatPkg =
+                new CCCommunicateClass.Seria_BaseMessage(base.ExportSerializeData());
+            serFormatPkg.MessageType = this.mMessageType.ExportSerializeData();
+            return serFormatPkg;
         }
         #endregion
     }
