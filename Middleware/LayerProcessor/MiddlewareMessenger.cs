@@ -10,6 +10,7 @@ using Middleware.Communication;
 using Middleware.Communication.Message;
 using Middleware.Communication.Message.Interface;
 using Middleware.Communication.Package.Internal;
+using Middleware.Communication.Package;
 
 namespace Middleware.LayerProcessor
 {
@@ -47,6 +48,7 @@ namespace Middleware.LayerProcessor
 
         protected MiddlewareMessenger() { }
 
+        #region IMiddlewareMessenger
         public void Initialize(MiddlewareCorelogicLayer coreLogicProcessor,
                                 GroupCommunicateLayer groupCommunicateProcessor, 
                                 MiddlewareCommunicateLayer middlewareCommunicateProcessor,
@@ -177,6 +179,32 @@ namespace Middleware.LayerProcessor
             }
         }
 
+        public C2CReplyPackage VertificationInfoRecived(C2CRequestPackage vertification)
+        {
+            uint typMsg = BitConverter.ToUInt32(vertification.ParamDefalutValues["MessageType"], 0);
+            if (mSpeakGroup.ContainsKey(typMsg))
+            {
+                C2CReplyPackage replyPkg = new C2CReplyPackage(ReplyPackage.Middleware_ReplyInfo.S_OK,
+                                                new Dictionary<string, byte[]>() 
+                                                { 
+                                                    { "group_detail", 
+                                                        Encoding.ASCII.GetBytes((mSpeakGroup[typMsg] as GroupDevice).Detail)} 
+                                                });
+                return replyPkg;
+            }
+            else
+            {
+                C2CReplyPackage replyPkg = new C2CReplyPackage(ReplyPackage.Middleware_ReplyInfo.E_FAILD,
+                                new Dictionary<string, byte[]>() 
+                                                { 
+                                                    { "excetion_detail", 
+                                                        Encoding.UTF8.GetBytes("所监听的消息不存在或尚未注册")} 
+                                                });
+                return replyPkg;
+            }
+        }
+
         public event MessageRecivedHandler MessageRecived = null;
+        #endregion
     }
 }

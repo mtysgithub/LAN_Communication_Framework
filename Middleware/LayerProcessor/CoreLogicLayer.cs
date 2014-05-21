@@ -703,13 +703,15 @@ namespace Middleware.LayerProcessor
         internal void MiddlewareTransferMessageRecived(RequestMTPackage reqtMTPkg)
         {
             C2CRequestPackage c2cReqtPkg = reqtMTPkg.C2CNormalTransPackage;
-            if (c2cReqtPkg.WaittingResponse)
-            {
-                //_waitResponCCReqtPkg2ReqtMTPkg.Add(c2cReqtPkg, reqtMTPkg);
-                _waitResponCCReqtPkg2ReqtMTPkg[c2cReqtPkg] = reqtMTPkg;
-            }
+
             if (null != c2cReqtPkg.OutSideMessage)
             {
+                if (c2cReqtPkg.WaittingResponse)
+                {
+                    //_waitResponCCReqtPkg2ReqtMTPkg.Add(c2cReqtPkg, reqtMTPkg);
+                    _waitResponCCReqtPkg2ReqtMTPkg[c2cReqtPkg] = reqtMTPkg;
+                }
+
                 //index waitting response
                 RequestPackage outsideReqtPkg = c2cReqtPkg.OutSideMessage;
                 if (outsideReqtPkg.WaittingResponse)
@@ -722,9 +724,23 @@ namespace Middleware.LayerProcessor
             }
             else
             {
-                //内部消息
-                //未实现，保留扩展性
-                throw new NotImplementedException();
+                //消息模块验证消息
+                if (c2cReqtPkg.OperatName.Equals("ListenerVertificationRequest"))
+                {
+                    C2CReplyPackage replyPkg = mMiddlewareMessenger.VertificationInfoRecived(c2cReqtPkg);
+                    ReplyMTPackage mtReplyPkg = new ReplyMTPackage(replyPkg, 
+                                                                    _selfDevice, 
+                                                                    reqtMTPkg.SourceDevice, 
+                                                                    reqtMTPkg.MessageId);
+                    try
+                    {
+                        _middlewareCommunicateProcessor.AsynSendMessage(mtReplyPkg);
+
+                    }catch(Exception ex)
+                    {
+                        //TODO.
+                    }
+                }
             }
         }
 

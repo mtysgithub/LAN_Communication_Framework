@@ -5,6 +5,7 @@ using System.Text;
 using Middleware.Device;
 using Middleware.Communication;
 using Middleware.Communication.Message;
+using Middleware.Communication.Package.Internal;
 
 namespace Middleware.LayerProcessor.Interfcace
 {
@@ -50,6 +51,13 @@ namespace Middleware.LayerProcessor.Interfcace
         /// </summary>
         /// <param name="msg">消息包</param>
         void SendMessage(BaseMessage msg);
+
+        /// <summary>
+        /// 处理一个监听请求
+        /// </summary>
+        /// <param name="vertification">请求包</param>
+        /// <returns></returns>
+        C2CReplyPackage VertificationInfoRecived(C2CRequestPackage vertification);
 
         /// <summary>
         /// 事件接收回调
