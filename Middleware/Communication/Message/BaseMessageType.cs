@@ -24,6 +24,8 @@ namespace Middleware.Communication.Message
             get { return mId; }
         }
 
+        public BaseMessageType() : base() { }
+
         public BaseMessageType(string name, uint id)
         {
             mName = name;
