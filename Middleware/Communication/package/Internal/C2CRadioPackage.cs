@@ -18,7 +18,6 @@ namespace Middleware.Communication.Package.Internal
         public C2CRadioPackage()
             : base()
         {
-            this.OutsideMessage = RadioPackage.Empty;
         }
         public C2CRadioPackage(GroupDevice targetDevice,
                                             string radioName,
@@ -69,13 +68,21 @@ namespace Middleware.Communication.Package.Internal
             get { return _outsideMessage; }
             set { _outsideMessage = value; }
         }
-        private RadioPackage _outsideMessage = null;
+        private RadioPackage _outsideMessage = RadioPackage.Empty;
+
+        private bool mIsEmpty = false;
+        public bool IsEmpty
+        {
+            get { return mIsEmpty; }
+        }
 
         public new static C2CRadioPackage Empty
         {
             get 
             { 
-                return new C2CRadioPackage(); 
+                C2CRadioPackage obj = new C2CRadioPackage();
+                obj.mIsEmpty = true;
+                return obj;
             }
         }
     }
