@@ -175,7 +175,7 @@ namespace Middleware.LayerProcessor
 
         public void SendMessage(BaseMessage msg)
         {
-            if (mMsgTyp2Dispatcher.ContainsKey(msg.Type))
+            if (mMsgTyp2Dispatcher.ContainsKey(msg.Type.Id))
             {
                 GroupDevice group = mMsgTyp2Dispatcher[msg.Type] as GroupDevice;
                 try
@@ -195,14 +195,14 @@ namespace Middleware.LayerProcessor
 
         public C2CReplyPackage VertificationInfoRecived(C2CRequestPackage vertification)
         {
-            uint typMsg = BitConverter.ToUInt32(vertification.ParamDefalutValues["MessageType"], 0);
-            if (mSpeakMsgID2Group.ContainsKey(typMsg))
+            uint typMsgId = BitConverter.ToUInt32(vertification.ParamDefalutValues["MessageType"], 0);
+            if (mSpeakMsgID2Group.ContainsKey(typMsgId))
             {
                 C2CReplyPackage replyPkg = new C2CReplyPackage(ReplyPackage.Middleware_ReplyInfo.S_OK,
                                                 new Dictionary<string, byte[]>() 
                                                 { 
                                                     { "group_detail", 
-                                                        Encoding.ASCII.GetBytes((mSpeakMsgID2Group[typMsg] as GroupDevice).Detail)} 
+                                                        Encoding.ASCII.GetBytes((mSpeakMsgID2Group[typMsgId] as GroupDevice).Detail)} 
                                                 });
                 return replyPkg;
             }
