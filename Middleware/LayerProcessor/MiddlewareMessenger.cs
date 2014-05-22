@@ -158,7 +158,7 @@ namespace Middleware.LayerProcessor
             GroupDevice group = null;
             try
             {
-                mGroupCommunicateProcessor.CreateGroup(mDispatcherPrefixi + "_" + typMsg.Name + "_" + Guid.NewGuid().ToString());
+                group = mGroupCommunicateProcessor.CreateGroup(mDispatcherPrefixi + "_" + typMsg.Name + "_" + Guid.NewGuid().ToString());
                 mGroupCommunicateProcessor.JoinGroup(group, Communication.CommunicationConfig.GroupMemberRole.Speaker);
 
             }catch(Exception ex)
