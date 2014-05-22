@@ -40,7 +40,6 @@ namespace Middleware.LayerProcessor
         protected MiddlewareCommunicateLayer mMiddlewareCommunicateProcessor = null;
 
         protected IMessageFactory mMessageFactory = null;
-        protected Hashtable mMsgTyp2Dispatcher = null;
         private const string mDispatcherPrefixi = "Dispatcher_";
 
         protected Hashtable mListeningGroup2Device = null;
@@ -65,13 +64,10 @@ namespace Middleware.LayerProcessor
 
             this.MessageRecived += coMsgRecivedHandler;
             mMessageFactory = MessageFactory.Instance;
-            mMsgTyp2Dispatcher = new Hashtable();
         }
 
         public void Release()
         {
-            mMsgTyp2Dispatcher.Clear();
-            mMsgTyp2Dispatcher = null;
             mMessageFactory = null;
             this.MessageRecived = null;
 
@@ -175,9 +171,9 @@ namespace Middleware.LayerProcessor
 
         public void SendMessage(BaseMessage msg)
         {
-            if (mMsgTyp2Dispatcher.ContainsKey(msg.Type.Id))
+            if (mSpeakMsgID2Group.ContainsKey(msg.Type.Id))
             {
-                GroupDevice group = mMsgTyp2Dispatcher[msg.Type] as GroupDevice;
+                GroupDevice group = mSpeakMsgID2Group[msg.Type.Id] as GroupDevice;
                 try
                 {
                     mGroupCommunicateProcessor.Radio(new C2CMessageRadioPackage(group, msg));
