@@ -92,7 +92,6 @@ namespace Middleware.LayerProcessor
 
         public virtual void Dispose()
         {
-            mMiddlewareMessenger.Release();
             _groupCommunicateProcessor.Dispose();
             _middlewareCommunicateProcessor.Dispose();
             _binProcessferProcessor.Dispose();
