@@ -13,6 +13,7 @@ namespace ProtocolLibrary.CCProtocol
         public static List<Type> CreateSpecializationSerializeTypeSet()
         {
             List<Type> typList = new List<Type>();
+            typList.Add(typeof(Seria_BaseMessageType));
             typList.Add(typeof(Seria_ParamPackage));
             typList.Add(typeof(Seria_Device));
             typList.Add(typeof(Seria_MiddlewareTransferPackage));
