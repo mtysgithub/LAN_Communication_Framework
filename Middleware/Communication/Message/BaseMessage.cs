@@ -45,8 +45,9 @@ namespace Middleware.Communication.Message
         public void ParseSerializeData(CCCommunicateClass.Seria_BaseMessage obj)
         {
             base.ParseSerializeData(obj as CCCommunicateClass.Seria_ParamPackage);
-            this.mMessageType = new BaseMessageType();
-            this.mMessageType.ParseSerializeData(obj.MessageType);
+            BaseMessageType tmpObj = new BaseMessageType();
+            tmpObj.ParseSerializeData(obj.MessageType);
+            this.mMessageType = tmpObj;
         }
 
         public new CCCommunicateClass.Seria_BaseMessage ExportSerializeData()

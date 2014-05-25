@@ -52,7 +52,10 @@ namespace Middleware.Communication.Package.Internal
         public void ParseSerializeData(CCCommunicateClass.Seria_C2CRadioPackage obj)
         {
             base.ParseSerializeData(obj as CCCommunicateClass.Seria_RadioPackage);
-            this.OutsideMessage.ParseSerializeData(obj.OutsideMessage);
+
+            RadioPackage tmpRadioPkg = new RadioPackage();
+            tmpRadioPkg.ParseSerializeData(obj.OutsideMessage);
+            this.OutsideMessage = tmpRadioPkg;
         }
 
         public new CCCommunicateClass.Seria_C2CRadioPackage ExportSerializeData()

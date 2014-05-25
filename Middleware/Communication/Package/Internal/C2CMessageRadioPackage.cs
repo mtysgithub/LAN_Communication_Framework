@@ -58,8 +58,10 @@ namespace Middleware.Communication.Package.Internal
         public void ParseSerializeData(CCCommunicateClass.Seria_C2CMessageRadioPackage obj)
         {
             base.ParseSerializeData(obj as CCCommunicateClass.Seria_C2CRadioPackage);
-            this.mMessage = new BaseMessage();
-            this.mMessage.ParseSerializeData(obj.Message);
+
+            BaseMessage message = new BaseMessage();
+            message.ParseSerializeData(obj.Message);
+            this.mMessage = message;
         }
 
         public static C2CMessageRadioPackage Empty

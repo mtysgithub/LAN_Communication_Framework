@@ -30,7 +30,10 @@ namespace Middleware.Communication.Package.Internal
         public void ParseSerializeData(CCCommunicateClass.Seria_C2CRequestPackage obj)
         {
             base.ParseSerializeData(obj as CCCommunicateClass.Seria_RequestPackage);
-            this.OutSideMessage.ParseSerializeData(obj.OutsideMessage);
+
+            RequestPackage tmpReqtPkg = new RequestPackage();
+            tmpReqtPkg.ParseSerializeData(obj.OutsideMessage);
+            this.OutSideMessage = tmpReqtPkg;
         }
         public CCCommunicateClass.Seria_C2CRequestPackage ExportSerializeData()
         {

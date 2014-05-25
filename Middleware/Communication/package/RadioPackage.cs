@@ -81,7 +81,7 @@ namespace Middleware.Communication.Package
                             Buffer.BlockCopy(bytes, 1, bytObjContent, 0, bytObjContent.Length);
 
                             CCCommunicateClass.Seria_RadioPackage serializeFormatPkg = null;
-                            RadioPackage ret = RadioPackage.Empty;
+                            RadioPackage ret = new RadioPackage();
                             {
                                 using (MemoryStream m = new MemoryStream(bytObjContent))
                                 {
@@ -106,7 +106,7 @@ namespace Middleware.Communication.Package
                             Buffer.BlockCopy(bytes, 1, bytObjContent, 0, bytObjContent.Length);
 
                             CCCommunicateClass.Seria_C2CRadioPackage serializeFormatPkg = null;
-                            C2CRadioPackage ret = C2CRadioPackage.Empty;
+                            C2CRadioPackage ret = new C2CRadioPackage();
                             using (MemoryStream m = new MemoryStream(bytObjContent))
                             {
                                 CJNet_SerializeTool deSerializeTool = new CJNet_SerializeTool();
@@ -135,7 +135,7 @@ namespace Middleware.Communication.Package
                                 serializeFormatPkg = deSerializeTool.Deserialize(m, null, typeof(CCCommunicateClass.Seria_C2CMessageRadioPackage))
                                                                 as CCCommunicateClass.Seria_C2CMessageRadioPackage;
                             }
-                            C2CMessageRadioPackage ret = C2CMessageRadioPackage.Empty;
+                            C2CMessageRadioPackage ret = new C2CMessageRadioPackage();
                             ret.ParseSerializeData(serializeFormatPkg);
                             return ret;
                         }
@@ -156,8 +156,11 @@ namespace Middleware.Communication.Package
         public void ParseSerializeData(CCCommunicateClass.Seria_RadioPackage obj)
         {
             base.ParseSerializeData(obj as CCCommunicateClass.Seria_ParamPackage);
-            this.Group.ParseSerializeData(obj.GroupInfo);
             this.RadioName = obj.RadioName;
+
+            GroupDevice tmpGroupDevice = new GroupDevice();
+            tmpGroupDevice.ParseSerializeData(obj.GroupInfo);
+            this.Group = tmpGroupDevice;
         }
 
         public new CCCommunicateClass.Seria_RadioPackage ExportSerializeData()
