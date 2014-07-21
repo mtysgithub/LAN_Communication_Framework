@@ -112,9 +112,10 @@ namespace Mty.LCF.Server
             while(0 < _logMsgSeq.Count)
             {
                 string msgItem = _logMsgSeq.Dequeue();
-                this.LogWIndow.AppendText("\r\n");
-                this.LogWIndow.AppendText(msgItem);
-                this.LogWIndow.AppendText("\r\n");
+
+                //this.LogWIndow.AppendText("\r\n");
+                //this.LogWIndow.AppendText(msgItem);
+                //this.LogWIndow.AppendText("\r\n");
             }   
         }
         #endregion
