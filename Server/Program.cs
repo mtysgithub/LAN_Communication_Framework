@@ -13,10 +13,17 @@ namespace Mty.LCF.Server
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Form mainForm = new Server();
-            Application.Run(mainForm);
+            if (System.Diagnostics.Process.GetProcessesByName(System.Diagnostics.Process.GetCurrentProcess().ProcessName).Length < 2)
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Form mainForm = new Server();
+                Application.Run(mainForm);
+            }
+            else
+            {
+                MessageBox.Show("程序实例已经在运行", "提示");
+            }
         }
     }
 }
